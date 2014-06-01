@@ -308,24 +308,6 @@ if(defined('_UserMenu')) {
             }
         }
 
-        /** Neue Rankings anzeigen */
-        $getra = db("SELECT id,postdate FROM ".$db['rankings']." ORDER BY id DESC",false,true);
-        $rankings = '';
-        if(!empty($getra) && check_new($getra['postdate'],1)) {
-            $check = cnt($db['rankings'], " WHERE postdate > ".$lastvisit);
-            if($check == "1") {
-                $cnt = "1";
-                $eintrag = _new_rankings_1;
-            } else {
-                $cnt = $check;
-                $eintrag = _new_rankings_2;
-            }
-
-            $can_erase = true;
-            $rankings = show(_user_new_rankings, array("cnt" => $cnt,
-                                                       "eintrag" => $eintrag));
-        }
-
         /** Neue Artikel anzeigen */
         $qryart = db("SELECT id,datum FROM ".$db['artikel']." WHERE public = 1 ORDER BY id DESC"); $artikel = '';
         if(_rows($qryart) >= 1) {
@@ -500,8 +482,6 @@ if(defined('_UserMenu')) {
                                                "artc" => $artc,
                                                "board" => _forum,
                                                "threads" => _forum_thread,
-                                               "rankings" => $rankings,
-                                               "nrankings" => _lobby_rankings,
                                                "nforum" => _lobby_forum,
                                                "ftopics" => $ftopics,
                                                "lastforum" => _last_forum,

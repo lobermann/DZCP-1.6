@@ -442,7 +442,6 @@ function install_mysql($login, $nick, $pwd, $email)
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (38, 12, 'nav_main', 1, '_glossar_', '../glossar/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (13, 1, 'nav_clan', 1, '_squads_', '../squads/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (14, 3, 'nav_clan', 1, '_cw_', '../clanwars/', 1, 0)");
-        $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (16, 5, 'nav_clan', 1, '_rankings_', '../rankings/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (18, 3, 'nav_server', 1, '_ts_', '../teamspeak/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (20, 2, 'nav_misc', 1, '_galerie_', '../gallery/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (21, 3, 'nav_misc', 1, '_kontakt_', '../contact/', 1, 0)");
@@ -618,13 +617,12 @@ function install_mysql($login, $nick, $pwd, $email)
              `downloads` int(1) NOT NULL default '0',
              `newsletter` int(1) NOT NULL default '0',
              `intnews` int(1) NOT NULL default '0',
-             `rankings` int(1) NOT NULL default '0',
              `contact` int(1) NOT NULL default '0',
              `joinus` int(1) NOT NULL default '0',
              `artikel` int(1) NOT NULL default '0',
              PRIMARY KEY  (`id`)
              ) ");
-  $qry = db("INSERT INTO ".$db['permissions']." (`id`, `user`, `intforum`, `clankasse`, `clanwars`, `gallery`, `editusers`, `edittactics`, `editsquads`, `editserver`, `editkalender`, `news`, `gb`, `forum`, `votes`, `votesadmin`, `links`, `downloads`, `newsletter`, `intnews`, `rankings`, `contact`, `joinus`, `shoutbox`, `artikel`) VALUES (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+  $qry = db("INSERT INTO ".$db['permissions']." (`id`, `user`, `intforum`, `clankasse`, `clanwars`, `gallery`, `editusers`, `edittactics`, `editsquads`, `editserver`, `editkalender`, `news`, `gb`, `forum`, `votes`, `votesadmin`, `links`, `downloads`, `newsletter`, `intnews`, `contact`, `joinus`, `shoutbox`, `artikel`) VALUES (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
 //-> Positionen
   $qry = db("DROP TABLE IF EXISTS ".$db['pos']."");
   $qry = db("CREATE TABLE ".$db['pos']." (
@@ -637,18 +635,6 @@ function install_mysql($login, $nick, $pwd, $email)
   $qry = db("INSERT INTO ".$db['pos']." (`id`, `pid`, `position`) VALUES (2, 2, 'Co-Leader')");
   $qry = db("INSERT INTO ".$db['pos']." (`id`, `pid`, `position`) VALUES (3, 3, 'Webmaster')");
   $qry = db("INSERT INTO ".$db['pos']." (`id`, `pid`, `position`) VALUES (4, 4, 'Member')");
-//-> Rankings
-  $qry = db("DROP TABLE IF EXISTS ".$db['rankings']."");
-  $qry = db("CREATE TABLE ".$db['rankings']." (
-             `id` INT(5) NOT NULL AUTO_INCREMENT,
-             `league` VARCHAR(50) NOT NULL,
-             `lastranking` INT(10) NOT NULL,
-             `rank` INT(10) NOT NULL,
-             `squad` VARCHAR(5) NOT NULL,
-             `url` VARCHAR(249) NOT NULL,
-             `postdate` INT(20) NOT NULL,
-             PRIMARY KEY (`id`)
-             )");
 //-> Seiten
   $qry = db("DROP TABLE IF EXISTS ".$db['sites']."");
   $qry = db("CREATE TABLE ".$db['sites']." (
@@ -995,8 +981,6 @@ function update_mysql()
              SET signatur = ''");
 //UserGB
   $qry = db("ALTER TABLE ".$db['usergb']." ADD `ip` varchar(50) NOT NULL default '0'");
-//Rankings
-  $qry = db("ALTER TABLE ".$db['rankings']." ADD `lastranking` int(10) NOT NULL");
 // Usergallery
   $qry = db("ALTER TABLE ".$db['usergallery']." CHANGE `pic` `pic` varchar(200) NOT NULL default ''");
 //-> Artikel
@@ -1387,7 +1371,6 @@ function update_mysql_1_6()
     db("ALTER TABLE `".$db['sites']."` CHANGE `titel` `titel` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;");
     db("ALTER TABLE `".$db['clankasse']."` CHANGE `betrag` `betrag` FlOAT(10) NOT NULL");
     db("ALTER TABLE `".$db['permissions']."` CHANGE `pos` `pos` INT( 1 ) NOT NULL DEFAULT '0';");
-    db("ALTER TABLE `".$db['rankings']."` CHANGE `lastranking` `lastranking` INT( 10 ) NOT NULL DEFAULT '0';");
     db("ALTER TABLE `".$db['users']."` ADD `xboxid` VARCHAR( 100 ) NOT NULL DEFAULT '' AFTER `steamid`;");
     db("ALTER TABLE `".$db['users']."` ADD `psnid` VARCHAR( 100 ) NOT NULL DEFAULT '' AFTER `steamid`;");
     db("ALTER TABLE `".$db['users']."` ADD `skypename` VARCHAR( 100 ) NOT NULL DEFAULT '' AFTER `steamid`;");

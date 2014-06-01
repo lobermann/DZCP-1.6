@@ -391,7 +391,6 @@ define('_user_new_news', '&nbsp;&nbsp;<a href="../news/"><span class="fontWichti
 define('_user_new_clanwar', '&nbsp;&nbsp;<a href="../clanwars/?action=details&amp;id=[id]#lastcomment"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
 define('_user_new_msg', '&nbsp;&nbsp;<a href="?action=msg"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
 define('_user_new_votes', '&nbsp;&nbsp;<a href="../votes/"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
-define('_user_new_rankings', '&nbsp;&nbsp;<a href="../rankings/"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
 define('_select_field', '<option value="[value]" [sel]> [what]</option>');
 define('"_shout_nick"', "<a href='mailto:[email]'>[nick]</a>");
 define('_user_new_gallery', '&nbsp;&nbsp;<a href="../gallery/"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
