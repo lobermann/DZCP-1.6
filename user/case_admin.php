@@ -164,7 +164,6 @@ if(defined('_UserMenu')) {
                     db("DELETE FROM ".$db['news']." WHERE autor = '".intval($_GET['id'])."'");
                     db("DELETE FROM ".$db['permissions']." WHERE user = '".intval($_GET['id'])."'");
                     db("DELETE FROM ".$db['squaduser']." WHERE user = '".intval($_GET['id'])."'");
-                    db("DELETE FROM ".$db['taktik']." WHERE autor = '".intval($_GET['id'])."'");
                     db("DELETE FROM ".$db['buddys']." WHERE user = '".intval($_GET['id'])."' OR buddy = '".intval($_GET['id'])."'");
                     db("UPDATE ".$db['usergb']." SET `reg` = 0 WHERE reg = ".intval($_GET['id'])."");
                     db("DELETE FROM ".$db['userpos']." WHERE user = '".intval($_GET['id'])."'");

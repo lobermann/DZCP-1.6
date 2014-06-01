@@ -473,7 +473,6 @@ function install_mysql($login, $nick, $pwd, $email)
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (31, 4, 'nav_user', 1, '_edit_profile_', '../user/?action=editprofile', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal, wichtig) VALUES (32, 5, 'nav_user', 1, '_logout_', '../user/?action=logout', 1, 0, 1)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (34, 1, 'nav_member', 1, '_clankasse_', '../clankasse/', 1, 0)");
-        $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (35, 2, 'nav_member', 1, '_taktiken_', '../taktik/', 1, 0)");
 //-> Newskategorien
   $qry = db("DROP TABLE IF EXISTS ".$db['newskat']."");
   $qry = db("CREATE TABLE ".$db['newskat']." (
@@ -739,19 +738,6 @@ function install_mysql($login, $nick, $pwd, $email)
              PRIMARY KEY  (`id`)
              ) ");
   $qry = db("INSERT INTO ".$db['squaduser']." (`id`, `user`, `squad`) VALUES (1, 1, 1)");
-//-> Taktiken
-  $qry = db("DROP TABLE IF EXISTS ".$db['taktik']."");
-  $qry = db("CREATE TABLE ".$db['taktik']." (
-             `id` int(10) NOT NULL auto_increment,
-             `datum` int(20) NOT NULL default '0',
-             `map` varchar(20) NOT NULL default '',
-             `spart` text NOT NULL,
-             `standardt` text NOT NULL,
-             `sparct` text NOT NULL,
-             `standardct` text NOT NULL,
-             `autor` int(5) NOT NULL default '0',
-             PRIMARY KEY  (`id`)
-             ) ");
 //-> Users
   $qry = db("DROP TABLE IF EXISTS ".$db['users']."");
   $qry = db("CREATE TABLE ".$db['users']." (
