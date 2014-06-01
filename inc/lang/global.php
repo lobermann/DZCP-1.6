@@ -44,7 +44,6 @@ define('_profil_custom_url', '
   <td class="contentMainTop" width="20%"><span class="fontBold">[name]:</span></td>
   <td class="contentMainFirst" align="center"><a href="[value]" target="_blank" class="icon" />[value]</a></td>
 </tr>');
-define('_awards_event', '<a href="[url]" target="_blank">[event]</a>');
 define('_sponsors_textlink', '<a href="../sponsors/?action=link&amp;id=[id]" target="_blank">[name]</a>');
 define('_sponsors_bannerlink', '<a href="../sponsors/?action=link&amp;id=[id]" target="_blank" title="[title]"><img src="[banner]" alt="" /></a>');
 define('_next_event_link', '[datum] - <a class="navLastReg" href="../kalender/?action=show&amp;time=[timestamp]">[event]</a>');
@@ -170,13 +169,6 @@ define('_cw_add_select_field_squads', '<option value="[id]"> [name]</option>');
 define('_cw_edit_select_field_squads', '<option value="[id]" [sel]> [name]</option>');
 define('_cw_show_details', '<a href="?action=details&amp;id=[id]"><img src="../inc/images/details.gif" alt="" class="icon" /></a>');
 define('_cw_legende', '<tr><td class="[class]" align="center" width="1%">[img]</td><td class="[class]" colspan="10">[game]</td></tr>');
-## Awards ##
-define('_awards_erster_img', '<img src="../inc/images/1st.gif" alt="" class="icon" /> (1)');
-define('_awards_zweiter_img', '<img src="../inc/images/2nd.gif" alt="" class="icon" /> (2)');
-define('_awards_dritter_img', '<img src="../inc/images/3rd.gif" alt="" class="icon" /> (3)');
-define('_awards_admin_add_select_field_squads', '<option value="[id]"> [name]</option>');
-define('_awards_admin_edit_select_field_squads', '<option value="[id]" [sel]> [name]</option>');
-define('_awards_legende', '<tr><td class="[class]" align="center" width="1%">[img]</td><td class="[class]" colspan="6">[game]</td></tr>');
 ## Kontaktformulare ##
 define('_contact_hp', '<a href="[hp]" target="_blank">[hp]</a>');
 ## Linkus ##
@@ -399,7 +391,6 @@ define('_user_new_news', '&nbsp;&nbsp;<a href="../news/"><span class="fontWichti
 define('_user_new_clanwar', '&nbsp;&nbsp;<a href="../clanwars/?action=details&amp;id=[id]#lastcomment"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
 define('_user_new_msg', '&nbsp;&nbsp;<a href="?action=msg"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
 define('_user_new_votes', '&nbsp;&nbsp;<a href="../votes/"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
-define('_user_new_awards', '&nbsp;&nbsp;<a href="../awards/"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
 define('_user_new_rankings', '&nbsp;&nbsp;<a href="../rankings/"><span class="fontWichtig">[cnt]</span> [eintrag]</a><br />');
 define('_select_field', '<option value="[value]" [sel]> [what]</option>');
 define('"_shout_nick"', "<a href='mailto:[email]'>[nick]</a>");

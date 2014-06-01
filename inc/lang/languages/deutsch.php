@@ -219,7 +219,6 @@ define('_forum_abo_title', 'Thread abbonieren');
 define('_forum_vote', 'Umfrage');
 define('_admin_user_clanhead_info', 'Die Rechte hier k&ouml;nnen <u>zus&auml;tzlich</u> zu den Rechten der User-R&auml;nge vergeben werden.');
 define('_config_positions_boardrights', 'interne Forenrechte');
-define('_perm_awards', 'Awards verwalten');
 define('_perm_clankasse', 'Clankasse verwalten');
 define('_perm_contact', 'Kontakt Formular empfangen');
 define('_perm_editkalender', 'Kalendereintr&auml;ge  verwalten');
@@ -431,7 +430,6 @@ define('_urls_linked_info', 'Textlinks werden automatisch in anklickbare Links k
 define('_sponsoren', 'Sponsoren');
 define('_downloads', 'Downloads');
 define('_cw', 'Clanwars');
-define('_awards', 'Awards');
 define('_ts', 'Teamspeak');
 define('_galerie', 'Galerie');
 define('_kontakt', 'Kontakt');
@@ -594,7 +592,6 @@ define('_config_smileys', 'Smiley-Editor');
 define('_config_profile', 'Profilfelder');
 define('_config_votes', 'Umfragen');
 define('_config_cw', 'Clanwars');
-define('_config_awards', 'Awards');
 define('_config_rankings', 'Rankings');
 define('_config_kalender', 'Kalender');
 define('_config_einst', 'Einstellungen');
@@ -1130,29 +1127,6 @@ define('_cw_show_all', '
 <tr>
   <td class="contentMainFirst" colspan="8" align="center"><a href="../clanwars/?action=showall&amp;id=[id]">Alle Wars dieses Teams anzeigen</a></td>
 </tr>');
-## Awards ##
-define('_awards_head', 'Awards');
-define('_awards_head_squad', 'Team');
-define('_awards_head_date', 'Datum');
-define('_awards_head_place', 'Platz');
-define('_awards_head_prize', 'Preis');
-define('_awards_head_event', 'Event-Name');
-define('_awards_head_link', 'Event-Link');
-define('_awards_no_show', 'Leider noch keine Awards vorhanden!');
-define('_list_all_link', '<tr><td colspan ="7" class="contentMainTop" align="center"><a href="../awards/?action=showall&amp;id=[id]">Alle Awards dieses Teams anzeigen</td></tr>');
-define('_head_stats', 'Statistik');
-define('_awards_stats', '<center>Wir haben insgesamt <span class="fontBold">[anz] Awards</span> geholt!</center>');
-define('_awards_stats_1', '<span class="fontBold">[anz]x</span> Platz Nr.1');
-define('_awards_stats_2', '<span class="fontBold">[anz]x</span> Platz Nr.2');
-define('_awards_stats_3', '<span class="fontBold">[anz]x</span> Platz Nr.3');
-define('_awards_empty_url', 'Du musst einen Event Link angeben!');
-define('_awards_empty_event', 'Du musst ein Event Namen angeben!');
-define('_awards_admin_head_add', 'Neuen Award hinzuf&uuml;gen');
-define('_awards_admin_added', 'Der Award wurde erfolgreich hinzugef&uuml;gt!');
-define('_awards_admin_head_edit', 'Award editieren');
-define('_awards_admin_edited', 'Der Award wurde erfolgreich editiert!');
-define('_awards_admin_deleted', 'Der Award wurde erfolgreich gel&ouml;scht!');
-define('_awards_head_legende', 'Legende');
 ## Rankings ##
 define('_error_empty_league', 'Du musst eine Liga angeben!');
 define('_error_empty_url', 'Du musst einen Teamlink angeben!');
@@ -1269,7 +1243,6 @@ define('_stats_cw_lost', '&nbsp;&nbsp;- davon verloren');
 define('_stats_cw_points', 'Gesamtpunktzahl');
 define('_stats_place', '&nbsp;&nbsp;- davon Platz');
 define('_stats_place_misc', '&nbsp;&nbsp;- davon sonstige Pl&auml;tze');
-define('_stats_awards', 'Gewonnene Awards');
 define('_stats_mysql', 'MySQL-Datenbank');
 define('_stats_mysql_size', 'Datenbankgr&ouml;&szlig;e');
 define('_stats_mysql_entrys', 'Tabellen');
@@ -1482,13 +1455,9 @@ define('_hlswid', 'XFire Name');
 define('_hlswstatus', 'XFire');
 define('_user_deleted', 'Der User wurde erfolgreich gel&ouml;scht!');
 define('_admin_user_shoutbox', 'Admin: Shoutbox');
-define('_admin_user_awards', 'Admin: Awards');
 define('_userlobby_kal_today', 'N&auml;chster Event ist <a href="../kalender/?action=show&time=[time]"><span class="fontWichtig">heute - [event]</span></a>');
 define('_userlobby_kal_not_today', 'N&auml;chstes Event ist am <a href="../kalender/?action=show&time=[time]"><span class="fontUnder">[date] - [event]</span></a>');
 define('_profil_country', 'Land');
-define('_lobby_awards', 'Awards');
-define('_new_awards_1', 'neuer Award');
-define('_new_awards_2', 'neue Awards');
 define('_lobby_rankings', 'Rankings');
 define('_new_rankings_1', 'neue Ver&auml;nderung');
 define('_new_rankings_2', 'neue Ver&auml;nderungen');
@@ -1792,7 +1761,6 @@ define('_config_info_gallery', 'Anzahl der Bilder die maximal in einer Reihe gez
 define('_config_server_ts_updated', 'Die TeamspeakIP wurde erfogreich gesetzt!');
 define('_ts_sport', 'Server Queryport');
 define('_ts_width', 'Breite der Anzeige');
-define('_config_c_awards', 'Awards');
 define('_counter_start', 'Counter');
 define('_counter_start_info', 'Hier kannst du eine Zahl eintragen, die zum Counter dazuaddiert wird.');
 define('_admin_nc', 'Newskommentare');
@@ -2181,7 +2149,6 @@ define('_news_sticky_till', 'bis zum:');
 define('_cw_xonx', 'XonX');
 define('_forum_lp_head', 'Letzter Forenpost');
 define('_forum_previews', 'Vorschau');
-define('_site_awards', 'Awards');
 define('_error_unregistered_nc', '
 <tr>
   <td class="contentMainFirst" align="center" colspan="2">

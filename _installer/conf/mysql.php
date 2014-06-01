@@ -11,19 +11,6 @@ include(basePath.'/inc/config.php');
 function install_mysql($login, $nick, $pwd, $email)
 {
   global $db;
-//-> Awards
-  $qry = db("DROP TABLE IF EXISTS ".$db['awards']."");
-  $qry = db("CREATE TABLE ".$db['awards']." (
-            `id` int(5) NOT NULL auto_increment,
-            `squad` int(10) NOT NULL,
-            `date` varchar(20) NOT NULL default '',
-            `postdate` varchar(20) NOT NULL default '',
-            `event`varchar(50) NOT NULL default '',
-            `place` varchar(5) NOT NULL default '',
-            `prize` text NOT NULL,
-            `url` text NOT NULL,
-            PRIMARY KEY  (`id`)
-            )");
   //-> Bannliste
   $qry = db("DROP TABLE IF EXISTS ".$db['prefix']."banned");
   $qry = db("CREATE TABLE ".$db['prefix']."banned (
@@ -120,7 +107,6 @@ function install_mysql($login, $nick, $pwd, $email)
              `m_clanwars` int(5) NOT NULL default '10',
              `maxshoutarchiv` int(5) NOT NULL default '20',
              `m_clankasse` int(5) NOT NULL default '20',
-             `m_awards` int(5) NOT NULL default '15',
              `m_userlist` int(5) NOT NULL default '40',
              `m_banned` int(5) NOT NULL default '40',
              `maxwidth` int(4) NOT NULL default '400',
@@ -456,7 +442,6 @@ function install_mysql($login, $nick, $pwd, $email)
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (38, 12, 'nav_main', 1, '_glossar_', '../glossar/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (13, 1, 'nav_clan', 1, '_squads_', '../squads/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (14, 3, 'nav_clan', 1, '_cw_', '../clanwars/', 1, 0)");
-        $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (15, 4, 'nav_clan', 1, '_awards_', '../awards/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (16, 5, 'nav_clan', 1, '_rankings_', '../rankings/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (18, 3, 'nav_server', 1, '_ts_', '../teamspeak/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (20, 2, 'nav_misc', 1, '_galerie_', '../gallery/', 1, 0)");
@@ -636,11 +621,10 @@ function install_mysql($login, $nick, $pwd, $email)
              `rankings` int(1) NOT NULL default '0',
              `contact` int(1) NOT NULL default '0',
              `joinus` int(1) NOT NULL default '0',
-             `awards` int(1) NOT NULL default '0',
              `artikel` int(1) NOT NULL default '0',
              PRIMARY KEY  (`id`)
              ) ");
-  $qry = db("INSERT INTO ".$db['permissions']." (`id`, `user`, `intforum`, `clankasse`, `clanwars`, `gallery`, `editusers`, `edittactics`, `editsquads`, `editserver`, `editkalender`, `news`, `gb`, `forum`, `votes`, `votesadmin`, `links`, `downloads`, `newsletter`, `intnews`, `rankings`, `contact`, `joinus`, `awards`, `shoutbox`, `artikel`) VALUES (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+  $qry = db("INSERT INTO ".$db['permissions']." (`id`, `user`, `intforum`, `clankasse`, `clanwars`, `gallery`, `editusers`, `edittactics`, `editsquads`, `editserver`, `editkalender`, `news`, `gb`, `forum`, `votes`, `votesadmin`, `links`, `downloads`, `newsletter`, `intnews`, `rankings`, `contact`, `joinus`, `shoutbox`, `artikel`) VALUES (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
 //-> Positionen
   $qry = db("DROP TABLE IF EXISTS ".$db['pos']."");
   $qry = db("CREATE TABLE ".$db['pos']." (

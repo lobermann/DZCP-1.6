@@ -856,12 +856,9 @@ squads/squads_show.html
 squads/squads_member.html
 clanwars/stats.html
 clanwars/squads_show.html
-awards/squads_show.html
-awards/squads_show_all.html
-awards/stats.html.html
 server/server_show.html
 ---------------------------------------------*/
-table.highlightSquads,table.highlightStats,table.highlightAwards,table.highlightServer {
+table.highlightSquads,table.highlightStats,table.highlightServer {
   width: 100%;
   border-top: 1px solid #BBB;
   border-bottom: 1px solid #BBB;
@@ -874,10 +871,6 @@ table.highlightServer {
 
 table.highlightSquads {
   border: 0px;
-}
-
-table.highlightAwards {
-  padding: 0px;
 }
 
 img.squadMember {

@@ -123,24 +123,6 @@ $dir = "stats";
                                     "nlost" => $lost." (".$lo_p."%)",
                                     "points" => _stats_cw_points,
                                     "npoints" => $allp));
-  } elseif($action == "awards") {
-    $ges = cnt($db['awards']);
-      $place_1 = cnt($db['awards'], " WHERE place = 1 ");
-      $place_2 = cnt($db['awards'], " WHERE place = 2 ");
-      $place_3 = cnt($db['awards'], " WHERE place = 3 ");
-
-
-    $stats = show($dir."/awards", array("head" => _site_awards,
-                                        "p1" => _stats_place." 1",
-                                        "p2" => _stats_place." 2",
-                                        "p3" => _stats_place." 3",
-                                        "p" => _stats_place_misc,
-                                        "awards" => _stats_awards,
-                                        "nawards" => $ges,
-                                        "np1" => $place_1,
-                                        "np2" => $place_2,
-                                        "np3" => $place_3,
-                                        "np" => $ges-$place_1-$place_2-$place_3));
   } elseif($action == "mysql") {
     $dbinfo = dbinfo();
     $stats = show($dir."/mysql", array("head" => _stats_mysql,
@@ -235,7 +217,6 @@ $dir = "stats";
                                      "user" => _user,
                                      "dl" => _site_dl,
                                      "mysql" => _stats_mysql,
-                                     "awards" => _site_awards,
                                      "cw" => _site_clanwars,
                                      "gb" =>  _site_gb,
                                      "forum" => _site_forum));

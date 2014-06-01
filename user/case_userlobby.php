@@ -308,23 +308,6 @@ if(defined('_UserMenu')) {
             }
         }
 
-        /** Neue Awards anzeigen */
-        $getaw = db("SELECT id,postdate FROM ".$db['awards']." ORDER BY id DESC",false,true); $awards = '';
-        if(!empty($getaw) && check_new($getaw['postdate'],1)) {
-            $check = cnt($db['awards'], " WHERE postdate > ".$lastvisit);
-            if($check == "1") {
-                $cnt = "1";
-                $eintrag = _new_awards_1;
-            } else {
-                $cnt = $check;
-                $eintrag = _new_awards_2;
-            }
-
-            $can_erase = true;
-            $awards = show(_user_new_awards, array("cnt" => $cnt,
-                                                   "eintrag" => $eintrag));
-        }
-
         /** Neue Rankings anzeigen */
         $getra = db("SELECT id,postdate FROM ".$db['rankings']." ORDER BY id DESC",false,true);
         $rankings = '';
@@ -519,8 +502,6 @@ if(defined('_UserMenu')) {
                                                "threads" => _forum_thread,
                                                "rankings" => $rankings,
                                                "nrankings" => _lobby_rankings,
-                                               "awards" => $awards,
-                                               "nawards" => _lobby_awards,
                                                "nforum" => _lobby_forum,
                                                "ftopics" => $ftopics,
                                                "lastforum" => _last_forum,
