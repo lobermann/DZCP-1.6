@@ -177,9 +177,6 @@ define('_awards_dritter_img', '<img src="../inc/images/3rd.gif" alt="" class="ic
 define('_awards_admin_add_select_field_squads', '<option value="[id]"> [name]</option>');
 define('_awards_admin_edit_select_field_squads', '<option value="[id]" [sel]> [name]</option>');
 define('_awards_legende', '<tr><td class="[class]" align="center" width="1%">[img]</td><td class="[class]" colspan="6">[game]</td></tr>');
-## Serverliste ##
-define('_slist_clanname_with_url', '<a href="[url]" target="blank">[name]</a>');
-define('_slist_clanname_without_url', '<span class="fontBold">[name]</span>');
 ## Kontaktformulare ##
 define('_contact_hp', '<a href="[hp]" target="_blank">[hp]</a>');
 ## Linkus ##
@@ -201,7 +198,6 @@ define('_icon_edit_squads', '<a href="?admin=squads&amp;do=edit&amp;id=[id]"><im
 define('_icon_delete_squads', '<a href="?admin=squads&amp;do=delete&amp;id=[id]"><img alt="" src="../inc/images/delete.gif" class="icon" /></a>');
 define('_member_admin_icon_upload', '<a href="../upload/?action=squads">upload</a>');
 define('_member_admin_icon_upload_edit', '<a href="../upload/?action=squads&amp;do=edit&amp;id=[id]">upload</a>');
-define('_icon_delete_slist', '<a href="?admin=serverlist&amp;do=delete&amp;id=[id]"><img alt="" src="../inc/images/delete.gif" class="icon" /></a>');
 define('_server_show_bannlist', '<a href="?action=banned&amp;id=[id]"><img src="../inc/images/rows.gif" alt="" class="icon" /> Bannliste</a>');
 define('_checkfield_squads', '
 <tr>

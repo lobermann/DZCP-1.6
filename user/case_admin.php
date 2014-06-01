@@ -286,7 +286,6 @@ if(defined('_UserMenu')) {
                                                    "posi" => _profil_position,
                                                    "level" => _admin_user_level,
                                                    "ck" => _admin_user_clankasse,
-                                                   "sl" => _admin_user_serverliste,
                                                    "eu" => _admin_user_edituser,
                                                    "et" => _admin_user_edittactics,
                                                    "esq" => _admin_user_editsquads,

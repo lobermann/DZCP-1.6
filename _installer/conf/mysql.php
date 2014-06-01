@@ -459,7 +459,6 @@ function install_mysql($login, $nick, $pwd, $email)
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (14, 3, 'nav_clan', 1, '_cw_', '../clanwars/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (15, 4, 'nav_clan', 1, '_awards_', '../awards/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (16, 5, 'nav_clan', 1, '_rankings_', '../rankings/', 1, 0)");
-        $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (17, 2, 'nav_server', 1, '_serverlist_', '../serverliste/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (18, 3, 'nav_server', 1, '_ts_', '../teamspeak/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (20, 2, 'nav_misc', 1, '_galerie_', '../gallery/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (21, 3, 'nav_misc', 1, '_kontakt_', '../contact/', 1, 0)");
@@ -621,7 +620,6 @@ function install_mysql($login, $nick, $pwd, $email)
              `clankasse` int(1) NOT NULL default '0',
              `clanwars` int(1) NOT NULL default '0',
              `shoutbox` int(1) NOT NULL default '0',
-             `serverliste` int(1) NOT NULL default '0',
              `editusers` int(1) NOT NULL default '0',
              `edittactics` int(1) NOT NULL default '0',
              `editsquads` int(1) NOT NULL default '0',
@@ -644,7 +642,7 @@ function install_mysql($login, $nick, $pwd, $email)
              `artikel` int(1) NOT NULL default '0',
              PRIMARY KEY  (`id`)
              ) ");
-  $qry = db("INSERT INTO ".$db['permissions']." (`id`, `user`, `intforum`, `clankasse`, `clanwars`, `gallery`, `serverliste`, `editusers`, `edittactics`, `editsquads`, `editserver`, `editkalender`, `news`, `gb`, `forum`, `votes`, `votesadmin`, `links`, `downloads`, `newsletter`, `intnews`, `rankings`, `contact`, `joinus`, `awards`, `shoutbox`, `artikel`) VALUES (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+  $qry = db("INSERT INTO ".$db['permissions']." (`id`, `user`, `intforum`, `clankasse`, `clanwars`, `gallery`, `editusers`, `edittactics`, `editsquads`, `editserver`, `editkalender`, `news`, `gb`, `forum`, `votes`, `votesadmin`, `links`, `downloads`, `newsletter`, `intnews`, `rankings`, `contact`, `joinus`, `awards`, `shoutbox`, `artikel`) VALUES (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
 //-> Positionen
   $qry = db("DROP TABLE IF EXISTS ".$db['pos']."");
   $qry = db("CREATE TABLE ".$db['pos']." (
@@ -698,22 +696,6 @@ function install_mysql($login, $nick, $pwd, $email)
              PRIMARY KEY  (`id`)
              ) ");
   $qry = db("INSERT INTO ".$db['server']." (`id`, `navi`, `status`, `name`, `ip`, `port`, `pwd`, `game`) VALUES (1, 1, 'bf2', 'Battlefield-Basis.de II von Hogibo.net', '80.190.178.115', 9260, '', 'bf2.gif')");
-//-> Serverliste
-  $qry = db("DROP TABLE IF EXISTS ".$db['serverliste']."");
-  $qry = db("CREATE TABLE ".$db['serverliste']." (
-             `id` int(20) NOT NULL auto_increment,
-             `datum` int(4) NOT NULL default '0',
-             `clanname` varchar(30) NOT NULL default '',
-             `clanurl` varchar(255) NOT NULL default '',
-             `ip` varchar(50) NOT NULL default '',
-             `port` varchar(10) NOT NULL default '',
-             `pwd` varchar(10) NOT NULL default '',
-             `checked` int(1) NOT NULL default '0',
-             `slots` char(2) NOT NULL default '',
-             PRIMARY KEY  (`id`)
-             ) ");
-
-  $qry = db("INSERT INTO ".$db['serverliste']." (`id`, `datum`, `clanname`, `clanurl`, `ip`, `port`, `pwd`, `checked`, `slots`) VALUES (1, ".time().", '[-tHu-] teamHanau', 'http://www.thu-clan.de', '82.98.216.10', '27015', '', 1, '17')");
 //-> Shoutbox
   $qry = db("DROP TABLE IF EXISTS ".$db['shout']."");
   $qry = db("CREATE TABLE ".$db['shout']." (
@@ -1366,7 +1348,6 @@ VALUES
 function update_mysql_1_5_1()
 {
   global $db;
-      db("ALTER TABLE ".$db['serverliste']." CHANGE `clanurl` `clanurl` VARCHAR( 255 ) NOT NULL");
         db("ALTER TABLE ".$db['settings']." ADD `double_post` INT(1) NOT NULL default '1'");
         db("ALTER TABLE ".$db['settings']." ADD `forum_vote` INT(1) NOT NULL default '1'");
 }
@@ -1473,9 +1454,6 @@ function update_mysql_1_6()
     db("ALTER TABLE `".$db['settings']."` DROP `squadtmpl`;");
     db("ALTER TABLE `".$db['downloads']."` CHANGE `beschreibung` `beschreibung` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;");
     db("ALTER TABLE `".$db['away']."` CHANGE `lastedit` `lastedit` TEXT NULL DEFAULT NULL;");
-    db("ALTER TABLE `".$db['serverliste']."` CHANGE `slots` `slots` CHAR(11) NOT NULL DEFAULT '';");
-    db("ALTER TABLE `".$db['serverliste']."` CHANGE `clanname` `clanname` VARCHAR(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '';");
-    db("ALTER TABLE `".$db['serverliste']."` CHANGE `pwd` `pwd` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '';");
     db("ALTER TABLE `".$db['ipcheck']."` ADD `user_id` INT(11) NOT NULL DEFAULT '0' AFTER `ip`;");
     db("ALTER TABLE `".$db['settings']."` ADD `steam_api_key` VARCHAR(50) NOT NULL DEFAULT '' AFTER `urls_linked`;");
     db("ALTER TABLE `".$db['settings']."` ADD `db_optimize` INT(20) NOT NULL DEFAULT '0' AFTER `steam_api_key`;");
