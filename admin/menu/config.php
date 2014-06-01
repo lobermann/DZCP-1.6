@@ -72,13 +72,11 @@ switch ($do) {
                                              `cache_teamspeak`    = '".((int)$_POST['cache_teamspeak'])."',
                                              `cache_server`       = '".((int)$_POST['cache_server'])."',
                                              `l_nwars`            = '".((int)$_POST['l_nwars'])."',
-                                             `m_membermap`        = '".((int)$_POST['m_membermap'])."'
                                          WHERE id = 1");
 
             db("UPDATE ".$db['settings']." SET `clanname`           = '".up($_POST['clanname'])."',
                                                `pagetitel`          = '".up($_POST['pagetitel'])."',
                                                `badwords`           = '".up($_POST['badwords'])."',
-                                               `gmaps_who`          = '".((int)$_POST['gmaps_who'])."',
                                                `language`           = '".up($_POST['language'])."',
                                                `regcode`            = '".((int)$_POST['regcode'])."',
                                                `forum_vote`         = '".((int)$_POST['forum_vote'])."',
@@ -145,7 +143,6 @@ switch ($do) {
         $sel_sl = $get['securelogin'] ? 'selected="selected"' : '';
         $selh_all = $get['allowhover'] == 1 ? 'selected="selected"' : '';
         $selh_cw = $get['allowhover'] == 2 ? 'selected="selected"' : '';
-        $sel_gm = $gets['gmaps_who'] ? 'selected="selected"' : '';
         $sel_dp = $gets['double_post'] ? 'selected="selected"' : '';
         $sel_fv = $gets['forum_vote'] ? 'selected="selected"' : '';
         $sel_gba =  $gets['gb_activ'] ? 'selected="selected"' : '';
@@ -162,7 +159,6 @@ switch ($do) {
                                                  "sel_refresh" => ($get['direct_refresh'] == 1 ? ' selected="selected"' : ''),
                                                  "direct_refresh" => _config_direct_refresh,
                                                  "direct_refresh_info" => _config_direct_refresh_info,
-                                                 "sel_gm" => $sel_gm,
                                                  "seconds" => _seconds,
                                                  "c_m_zeichen" => _zeichen,
                                                  "max" => _max,
@@ -193,9 +189,6 @@ switch ($do) {
                                                  "eml_fabo_pedit_subj" => _admin_fabo_pedit_subj,
                                                  "eml_reg" => _admin_reg,
                                                  "eml_pwd" => _admin_pwd,
-                                                 "gmaps_who" => _admin_gmaps_who,
-                                                 "gmaps_who_mem" => _gmaps_who_mem,
-                                                 "gmaps_who_all" => _gmaps_who_all,
                                                  "eml_nletter" => _admin_nletter,
                                                  "eml_pn" => _admin_pn,
                                                  "eml_fabo_npost" => _admin_fabo_npost,
@@ -221,7 +214,6 @@ switch ($do) {
                                                  "c_m_gallerypics" => _config_c_gallerypics,
                                                  "c_m_upicsize" => _config_c_upicsize,
                                                  "c_m_gallery" => _config_c_gallery,
-                                                 "c_m_membermap" => _config_c_m_membermap,
                                                  "c_l_servernavi" => _config_c_servernavi,
                                                  "c_tmpdir" => _config_tmpdir,
                                                  "c_maxwidth" => _config_maxwidth,
@@ -282,7 +274,6 @@ switch ($do) {
                                                  "m_comments" => $get['m_comments'],
                                                  "m_cwcomments" => $get['m_cwcomments'],
                                                  "m_archivnews" => $get['m_archivnews'],
-                                                 "m_membermap" => $get['m_membermap'],
                                                  "m_gb" => $get['m_gb'],
                                                  "m_fthreads" => $get['m_fthreads'],
                                                  "m_fposts" => $get['m_fposts'],

@@ -105,7 +105,6 @@ define('_perm_galleryintern','View internal Gallery');
 define('_perm_dlintern','View internal Downloads');
 
 define('_config_url_linked_head', "URLs linking");
-define('_config_c_m_membermap', 'Membermap');
 define('_ts_settings_customicon', 'custom icons downloading');
 define('_ts_settings_showchannels', 'Only show channels with user');
 define('_ts_settings_showchannels_desc', 'If this is on, they will only show channels there are users.');
@@ -154,7 +153,6 @@ define('_seconds', 'Seconds');
 define('_second', 'Second');
 
 ## ADDED / REDEFINED FOR 1.5 Final
-define('_side_membermap', 'Membermap');
 define('_id_dont_exist', 'The requested ID does not exist!');
 define('_perm_editts', 'manage teamspeak server');
 define('_perm_receivecws', 'receive fight us form');
@@ -434,16 +432,7 @@ define('_vote_no_answer' , 'You have to choose an answer!');
 define('_linkus_admin_edit' , 'Edit linkus');
 define('_config_linkus' , 'Linkus');
 define('_glossar_specialchar' , 'No special characters may be present in the designation!');
-define('_admin_gmaps_who' , 'Membermap');
-define('_gmaps_who_all' , 'Show all user');
-define('_gmaps_who_mem' , 'Show members only');
 define('_urls_linked_info', 'Convert text links into clickable hyperlinks');
-define('_membermap', 'Membermap');
-define('_membermap_user', 'Membermap User');
-define('_membermap_pic', 'Userpic');
-define('_membermap_nick', 'Nick');
-define('_membermap_rank', 'Position');
-define('_membermap_city', 'City');
 define('_sponsoren' , 'Sponsors');
 define('_downloads' , 'Downloads');
 define('_cw' , 'Clanwars');

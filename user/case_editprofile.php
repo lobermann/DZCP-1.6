@@ -95,7 +95,6 @@ if(defined('_UserMenu')) {
                   `nletter`      = '".((int)$_POST['nletter'])."',
                   `pnmail`       = '".((int)$_POST['pnmail'])."',
                   `city`         = '".up($_POST['city'])."',
-                  `gmaps_koord`  = '".up($_POST['gmaps_koord'])."',
                   `hp`           = '".links($_POST['hp'])."',
                   `icq`          = '".((int)$icq)."',
                   `hlswid`       = '".up(trim($_POST['hlswid']))."',
@@ -344,14 +343,9 @@ if(defined('_UserMenu')) {
           $deletepic = "| "._profil_delete_pic;
         if(!preg_match("#noavatar#",$avatar))
           $deleteava = "| "._profil_delete_ava;
-          $gmaps = show('membermap/geocoder', array('form' => 'editprofil'));
-
-
           if(rootAdmin($userid)) $delete = _profil_del_admin;
                 else $delete = show("page/button_delete_account", array("id" => $get['id'],
-                                                                                                                              "action" => "action=editprofile&amp;do=delete",
-                                                                                                                              "value" => _button_title_del_account,
-                                                                                                                              "del" => convSpace(_confirm_del_account)));
+                                                                        "del" => convSpace(_confirm_del_account)));
 
         $show = show($dir."/edit_profil", array("hardware" => _profil_hardware,
                                                 "hphead" => _profil_hp,
@@ -395,10 +389,8 @@ if(defined('_UserMenu')) {
                                                 "dropdown_age" => $dropdown_age,
                                                 "ava" => $avatar,
                                                 "hp" => re($get['hp']),
-                                                "gmaps" => $gmaps,
                                                 "nick" => re($get['nick']),
                                                 "name" => re($get['user']),
-                                                "gmaps_koord" => re($get['gmaps_koord']),
                                                 "rlname" => re($get['rlname']),
                                                 "bdayday" => $bdayday,
                                                 "bdaymonth" => $bdaymonth,

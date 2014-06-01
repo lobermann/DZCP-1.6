@@ -11,9 +11,6 @@ if(_adminMenu != 'true') exit;
                                                             "month" => dropdown("month",$bdaymonth,1),
                                                    "year" => dropdown("year",$bdayyear,1)));
 
-        $gmaps = show('membermap/geocoder', array('form' => 'adduser'));
-
-
         $qrysq = db("SELECT id,name FROM ".$db['squads']."
                      ORDER BY pos");
         while($getsq = _fetch($qrysq))
@@ -74,7 +71,6 @@ if(_adminMenu != 'true') exit;
                                                                                      "pcity" => _profil_city,
                                                                                      "pcountry" => _profil_country,
                                                                                      "country" => show_countrys($get['country']),
-                                                                                     "gmaps" => $gmaps,
                                                                                      "level" => _admin_user_level,
                                                                                      "ruser" => _status_user,
                                                                                      "trial" => _status_trial,
@@ -129,7 +125,6 @@ if(_adminMenu != 'true') exit;
                                  `regdatum` = '".time()."',
                                  `level`    = '".((int)$_POST['level'])."',
                                  `time`     = '".time()."',
-                                 `gmaps_koord`  = '".up($_POST['gmaps_koord'])."',
                                  `status`   = '1'");
 
       $insert_id = mysqli_insert_id($mysql);

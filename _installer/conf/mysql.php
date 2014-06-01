@@ -455,7 +455,6 @@ function install_mysql($login, $nick, $pwd, $email)
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (12, 11, 'nav_main', 1, '_userlist_', '../user/?action=userlist', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (38, 12, 'nav_main', 1, '_glossar_', '../glossar/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (13, 1, 'nav_clan', 1, '_squads_', '../squads/', 1, 0)");
-        $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (37, 2, 'nav_clan', 1, '_membermap_', '../membermap/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (14, 3, 'nav_clan', 1, '_cw_', '../clanwars/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (15, 4, 'nav_clan', 1, '_awards_', '../awards/', 1, 0)");
         $qry = db("INSERT INTO ".$db['navi']." (id, pos, kat, shown, name, url, type, internal) VALUES (16, 5, 'nav_clan', 1, '_rankings_', '../rankings/', 1, 0)");
@@ -1121,8 +1120,7 @@ function update_mysql_1_4()
 
   $qry = db("ALTER TABLE ".$db['c_who']." ADD `whereami` text NOT NULL,
                                           ADD `login` int(1) NOT NULL default '0'");
-  $qry = db("ALTER TABLE ".$db['users']." CHANGE `whereami` `whereami` text NOT NULL,
-                                          ADD `gmaps_koord` varchar(249) NOT NULL");
+  $qry = db("ALTER TABLE ".$db['users']." CHANGE `whereami` `whereami` text NOT NULL");
   $qry = db("ALTER TABLE ".$db['gb']." ADD `editby` text NOT NULL");
   $qry = db("ALTER TABLE ".$db['acomments']." ADD `editby` text NOT NULL");
   $qry = db("ALTER TABLE ".$db['newscomments']." ADD `editby` text NOT NULL");
@@ -1151,8 +1149,6 @@ function update_mysql_1_4()
                                              ADD `eml_pwd` text NOT NULL,
                                              ADD `eml_nletter` text NOT NULL,
                                              ADD `reg_shout` int(1) NOT NULL default '1',
-                                             ADD `gmaps_key` varchar(200) NOT NULL,
-                                             ADD `gmaps_who` int(1) NOT NULL default '1',
                                              ADD `prev` int(3) NOT NULL default '0'");
 
   $qry = db("DROP TABLE IF EXISTS ".$db['reg']."");
@@ -1420,7 +1416,6 @@ function update_mysql_1_6()
     db("ALTER TABLE `".$db['settings']."` CHANGE `clanname` `clanname` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;");
     db("ALTER TABLE `".$db['sites']."` CHANGE `titel` `titel` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;");
     db("ALTER TABLE `".$db['clankasse']."` CHANGE `betrag` `betrag` FlOAT(10) NOT NULL");
-    db("ALTER TABLE `".$db['users']."` CHANGE `gmaps_koord` `gmaps_koord` VARCHAR( 249 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '';");
     db("ALTER TABLE `".$db['permissions']."` CHANGE `pos` `pos` INT( 1 ) NOT NULL DEFAULT '0';");
     db("ALTER TABLE `".$db['rankings']."` CHANGE `lastranking` `lastranking` INT( 10 ) NOT NULL DEFAULT '0';");
     db("ALTER TABLE `".$db['users']."` ADD `xboxid` VARCHAR( 100 ) NOT NULL DEFAULT '' AFTER `steamid`;");
@@ -1447,8 +1442,6 @@ function update_mysql_1_6()
     db("ALTER TABLE `".$db['f_threads']."` CHANGE `t_reg` `t_reg` INT(11) NOT NULL DEFAULT '0';");
     db("ALTER TABLE `".$db['settings']."` DROP `pfad`;");
     db("ALTER TABLE `".$db['server']."` DROP `bl_file`, DROP `bl_path`, DROP `ftp_pwd`, DROP `ftp_login`, DROP `ftp_host`;");
-    db("ALTER TABLE `".$db['settings']."` DROP `gmaps_key`;");
-    db("ALTER TABLE `".$db['config']."` ADD `m_membermap` INT(5) NOT NULL DEFAULT '10' AFTER `m_banned`;");
     db("ALTER TABLE `".$db['settings']."` DROP `ftp_host`, DROP `ftp_login`, DROP `ftp_pwd`, DROP `bl_path`;");
     db("ALTER TABLE `".$db['settings']."` DROP `balken_vote`, DROP `balken_vote_menu`, DROP `balken_cw`;");
     db("ALTER TABLE `".$db['settings']."` DROP `squadtmpl`;");
