@@ -96,33 +96,6 @@ $dir = "stats";
                                       "buddys" => _stats_users_buddys,
                                       "nbuddys" => cnt($db['buddys']),
                                       "nusers" => cnt($db['users'])));
-  } elseif($action == "cw") {
-    if(cnt($db['cw'], " WHERE datum < ".time()."") != "0")
-    {
-      $won = cnt($db['cw'], " WHERE punkte > gpunkte");
-      $lost = cnt($db['cw'], " WHERE punkte < gpunkte");
-      $draw = cnt($db['cw'], " WHERE datum < ".time()." && punkte = gpunkte");
-      $ges = cnt($db['cw'], " WHERE datum < ".time()."");
-
-      $wo_p = @round($won*100/$ges, 1);
-      $lo_p = @round($lost*100/$ges, 1);
-      $dr_p = @round($draw*100/$ges, 1);
-    }
-
-    $allp = '<span class="CwWon">'.sum($db['cw'],'',"punkte").'</span>'.' : '.'
-             <span class="CwLost">'.sum($db['cw'],'',"gpunkte").'</span>';
-
-    $stats = show($dir."/cw", array("head" => _site_clanwars,
-                                    "played" => _stats_cw_played,
-                                    "nplayed" => $ges,
-                                    "won" => _stats_cw_won,
-                                    "draw" => _stats_cw_draw,
-                                    "lost" => _stats_cw_lost,
-                                    "nwon" => $won." (".$wo_p."%)",
-                                    "ndraw" => $draw." (".$dr_p."%)",
-                                    "nlost" => $lost." (".$lo_p."%)",
-                                    "points" => _stats_cw_points,
-                                    "npoints" => $allp));
   } elseif($action == "mysql") {
     $dbinfo = dbinfo();
     $stats = show($dir."/mysql", array("head" => _stats_mysql,
@@ -217,7 +190,6 @@ $dir = "stats";
                                      "user" => _user,
                                      "dl" => _site_dl,
                                      "mysql" => _stats_mysql,
-                                     "cw" => _site_clanwars,
                                      "gb" =>  _site_gb,
                                      "forum" => _site_forum));
 

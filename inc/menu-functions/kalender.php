@@ -35,9 +35,9 @@ function kalender($month="",$year="") {
     $today = mktime(0,0,0,date("n"),date("d"),date("Y"));
     $i = 1; $show = '';
     while($i <= 31 && checkdate($monat, $i, $jahr)) {
-        $data = ''; $event = ''; $bdays = ''; $cws = '';
+        $data = ''; $event = ''; $bdays = '';
         for($iw = 1; $iw <= 7; $iw++) {
-            unset($titlecw);  unset($titlebd); unset($titleev);
+            unset($titlebd); unset($titleev);
 
             $datum = mktime(0,0,0,$monat,$i,$jahr);
             $wday = getdate($datum);
@@ -57,15 +57,6 @@ function kalender($month="",$year="") {
                     }
                 }
 
-                $cws = ""; $titlecw = "";
-                $qry = db("SELECT datum,gegner FROM ".$db['cw']." WHERE DATE_FORMAT(FROM_UNIXTIME(datum), '%d.%m.%Y') = '".cal($i).".".$monat.".".$jahr."'");
-                if(_rows($qry)) {
-                    while($get = _fetch($qry)) {
-                        $cws = "set";
-                        $titlecw .='&lt;img src=../inc/images/cw.gif class=icon alt= /&gt;'.'&nbsp;'.jsconvert(_kal_cw.re($get['gegner'])).'&lt;br />';
-                    }
-                }
-
                 $event = ""; $titleev = "";
                 $qry = db("SELECT datum,title FROM ".$db['events']." WHERE DATE_FORMAT(FROM_UNIXTIME(datum), '%d.%m.%Y') = '".cal($i).".".$monat.".".$jahr."'");
                 if(_rows($qry)) {
@@ -75,9 +66,9 @@ function kalender($month="",$year="") {
                     }
                 }
 
-                $info = 'onmouseover="DZCP.showInfo(\''.cal($i).'.'.$monat.'.'.$jahr.'\', \''.$titlebd.$titlecw.$titleev.'\')" onmouseout="DZCP.hideInfo()"';
+                $info = 'onmouseover="DZCP.showInfo(\''.cal($i).'.'.$monat.'.'.$jahr.'\', \''.$titlebd.$titleev.'\')" onmouseout="DZCP.hideInfo()"';
 
-                if($event == "set" || $cws == "set" || $bdays == "set")
+                if($event == "set" || $bdays == "set")
                     $day = '<a class="navKal" href="../kalender/?m='.$monat.'&amp;y='.$jahr.'&amp;hl='.$i.'" '.$info.'>'.cal($i).'</a>';
                 else
                     $day = cal($i);

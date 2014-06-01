@@ -390,12 +390,6 @@ var DZCP = {
                              + ' <img src="../inc/images/admin/loading.gif" alt="" />'
                              + '</div>');
       var addpars = "";
-      if(form == 'cwForm') {
-          $("input[type=file]").each(function() {
-              addpars = addpars + "&" + $(this).prop('name') + "=" + $(this).prop('value');
-          });
-      }
-
       var url = prevURL;
       $.post(url, $('#' + form).serialize() + addpars, function(req) {
         $('#previewDIV').html(req);

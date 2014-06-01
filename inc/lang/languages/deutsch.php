@@ -48,11 +48,8 @@ define('_txt_sponsors', 'Sponsoren');
 define('_txt_counter', 'Statistik');
 define('_txt_l_news', 'Neuigkeiten');
 define('_txt_ftopics', 'Forenbeitr&auml;ge');
-define('_txt_l_wars', 'Letzte Wars');
-define('_txt_n_wars', 'n&auml;chste Wars');
 define('_txt_teams', 'Teams');
 define('_txt_gallerie', 'Unsere Gallerien');
-define('_txt_top_match', 'Top Match');
 define('_txt_shout', 'Shoutbox');
 define('_txt_template_switch', 'Design &auml;ndern');
 define('_txt_events', 'Termine');
@@ -99,8 +96,6 @@ define('_newspic_del', 'Newsbild l&ouml;schen?');
 define('_newspic_deleted', 'Newsbild erfolgreich gel&ouml;scht');
 define('_max', 'max.');
 
-define('_cw_screenshot_deleted', 'Screenshot erfolgreich gel&ouml;scht');
-
 define('_perm_galleryintern','Interne Gallery einsehen');
 define('_perm_dlintern','Interne Download einsehen');
 
@@ -126,7 +121,6 @@ define('_perm_partners', 'Partner verwalten');
 define('_perm_profile', 'Profilfelder verwalten');
 
 define('_dzcp_vcheck', 'Der DZCP Versions Checker informiert dich &uuml;ber neue DZCP Updates und zeigt dir, ob deine Version aktuell ist.<br><br><span class=fontBold>Beschreibung:</span><br><font color=#17D427>Gr&uuml;n:</font>Up to Date!<br><font color=#FFFF00>Gelb:</font> Keine Verbindung zu Server<br><font color=#FF0000>Rot:</font> Es ist ein neues Update verf&uuml;gbar!');
-define('_cw_dont_exist', 'Die angegebene Clanwar-ID existiert nicht!');
 
 //Steam
 define('_steam', 'Steam');
@@ -183,8 +177,6 @@ define('_admin_squads_no_navi', 'Nicht einf&uuml;gen');
 define('_config_cache_info', 'Hier k&ouml;nenn die Intervalle festgelegt werden, in der der Teamspeak- oder Gameserver neu abgefragt werden. Darunter werden die Daten aus dem Cache gelesen.');
 define('_config_direct_refresh', 'Direkte Weiterleitung');
 define('_config_direct_refresh_info', 'Wenn aktiviert, wird nach einer Aktion (z.B. Eintr&auml;ge in Forum, News, etc) direkt weitergeleitet, anstatt eine Infonachricht auszugeben.');
-define('_cw_reset_button', 'Admin: Spielerstatus zur&uuml;cksetzen');
-define('_cw_players_reset', 'Der Spielerstatus wurde erfolgreich zur&uuml;ckgesetzt!');
 define('_eintrag_titel_forum', '<a href="[url]" title="Diesen Beitrag anzeigen"><span class="fontBold">#[postid]</span></a> am [datum] um [zeit]  [edit] [delete]');
 define('_eintrag_titel', '<span class="fontBold">#[postid]</span> am [datum] um [zeit]  [edit] [delete]');
 ## ADDED / REDEFINED FOR 1.5.1
@@ -206,14 +198,7 @@ define('_login_signup', 'Registrieren');
 define('_config_links', 'Links');
 define('_no_server_navi', 'kein Server eingetragen');
 define('_vote_menu_no_vote', 'keine Umfrage eingetragen');
-define('_no_top_match', 'kein Top Match eingetragen');
 define('_team_logo', 'Team Logo');
-define('_cw_logo', 'Gegner Logo');
-define('_cw_screenshot', 'Screenshot');
-define('_cw_admin_top_setted', 'Der Clanwar wurde erfolgreich als Top Match eingetragen!');
-define('_cw_admin_top_unsetted', 'Der Clanwar wurde erfolgreich als Top Match ausgetragen!');
-define('_cw_admin_top_set', 'Als Top Match eintragen');
-define('_cw_admin_top_unset', 'Als Top Match austragen');
 define('_sq_banner', 'Teambanner');
 define('_forum_abo_title', 'Thread abbonieren');
 define('_forum_vote', 'Umfrage');
@@ -229,7 +214,6 @@ define('_perm_links', 'Links verwalten');
 define('_perm_newsletter', 'Newsletter verschicken');
 define('_perm_votesadmin', 'Umfragen verwalten');
 define('_perm_artikel', 'Artikel verwalten');
-define('_perm_clanwars', 'Clanwars verwalten');
 define('_perm_downloads', 'Downloads verwalten');
 define('_perm_editor', 'Seitenverwaltung');
 define('_perm_editsquads', 'Teams verwalten');
@@ -237,8 +221,6 @@ define('_perm_editusers', 'darf User editieren');
 define('_perm_gallery', 'Gallerien verwalten');
 define('_perm_glossar', 'Glossar verwalten');
 define('_perm_intnews', 'interne News lesen');
-define('_perm_joinus', 'JoinUs Formular empfangen');
-define('_perm_receivecws', 'FightUs Formular empfangen');
 define('_perm_news', 'Newsverwaltung');
 define('_perm_shoutbox', 'Shoutbox Admin');
 define('_perm_votes', 'interne Umfragen einsehen');
@@ -367,7 +349,6 @@ define('_forum_vote_del', 'Umfrage l&ouml;schen');
 define('_forum_vote_preview', 'Hier erscheint dann die Umfrage');
 define('_forum_spam_text', '[ltext]<p>&nbsp;</p><p>&nbsp;</p><span class="fontBold">Nachtrag von </span>[autor]:<p>&nbsp;</p>[ntext]');
 ####################################################################################
-define('_cw_screens_info', 'Nur jpg oder gif Dateien!');
 define('_config_config', 'Allgemeine Einstellungen');
 define('_config_dladmin', 'Downloads');
 define('_config_editor', 'Seitenverwaltung');
@@ -428,7 +409,6 @@ define('_glossar_specialchar', 'Es d&uuml;rfen keine Sonderzeichen in der Bezeic
 define('_urls_linked_info', 'Textlinks werden automatisch in anklickbare Links konvertiert');
 define('_sponsoren', 'Sponsoren');
 define('_downloads', 'Downloads');
-define('_cw', 'Clanwars');
 define('_ts', 'Teamspeak');
 define('_galerie', 'Galerie');
 define('_kontakt', 'Kontakt');
@@ -442,18 +422,13 @@ define('_config_c_lartikel', 'Men&uuml;: Last Artikel');
 define('_config_hover', 'Mouseover Informationen');
 define('_config_seclogin', 'Login Sicherheitsabfrage');
 define('_config_hover_standard', 'Standard Informationen einblenden');
-define('_config_hover_all', 'Alle Informationen einblenden');
-define('_config_hover_cw', 'Nur Clanwar Informationen einblenden');
 define('_shout_must_reg', 'Nur f&uuml;r registrierte User!');
 define('_error_vote_show', 'Dies ist eine &ouml;ffentliche Umfrage und kann somit nicht eingesehen werden!');
 define('_login_pwd_dont_match', 'Benutzername und/oder Passwort sind ung&uuml;ltig oder der Account wurde gesperrt!');
 define('_sq_aktiv', 'Aktiv');
 define('_sq_inaktiv', 'Inaktiv');
-define('_sq_sstatus', '<center>Gibt an, ob das Team im Fightus Formular etc. aufgelistet werden soll</center>');
 define('_internal', 'Intern');
 define('_sticky', 'Wichtig');
-define('_lobby_new_cwc_1', 'neuer Clanwarkommentar');
-define('_lobby_new_cwc_2', 'neue Clanwarkommentare');
 define('_admin_glossar_added', 'Der Begriff wurde erfolgreich eingetragen!');
 define('_admin_glossar_edited', 'Der Begriff wurde erfolgreich editiert!');
 define('_admin_glossar_deleted', 'Der Begriff wurde erfolgreich gel&ouml;scht!');
@@ -464,7 +439,6 @@ define('_config_glossar', 'Glossar');
 define('_config_gallery', 'Galerie');
 define('_glossar', 'Glossar');
 define('_admin_glossar', 'Admin: Glossar');
-define('_admin_fightus', 'FightUs empfangen?');
 define('_misc', "Sonstige");
 define('_all', "Alle");
 define('_glossar_link', 'Klicke hier um mehr &uuml;ber <span class=fontBold>[word]</span> zu erfahren!');
@@ -519,7 +493,6 @@ define('_server_admin_qport', 'Optional: Queryport');
 define('_admin_server_nostatus', 'Keine Live-Abfrage');
 define('_nletter_head', 'Newsletter verfassen');
 define('_squad', 'Team');
-define('_confirm_del_cw', 'Soll dieser Clanwar wirklich geloescht werden');
 define('_confirm_del_vote', 'Soll diese Umfrage wirklich geloescht werden');
 define('_confirm_del_dl', 'Soll dieser Download wirklich geloescht werden');
 define('_confirm_del_galpic', 'Soll dieses Bild wirklich geloescht werden');
@@ -590,7 +563,6 @@ define('_config_clear', 'Datenbank&nbsp;aufr&auml;umen');
 define('_config_smileys', 'Smiley-Editor');
 define('_config_profile', 'Profilfelder');
 define('_config_votes', 'Umfragen');
-define('_config_cw', 'Clanwars');
 define('_config_kalender', 'Kalender');
 define('_config_einst', 'Einstellungen');
 define('_profil_sig', 'Foren Signatur');
@@ -618,28 +590,10 @@ define('_welcome_guest', ' <img src="../inc/images/flaggen/nocountry.gif" alt=""
 define('_online_head', 'User online');
 define('_online_whereami', 'Bereich');
 define('_back', '<a href="javascript: history.go(-1)" class="files">zur&uuml;ck</a>');
-define('_contact_text_fightus', '
-Jemand hat das Fightus-Kontaktformular ausgef&uuml;llt!<br />
-Jeder berechtigte Admin hat darauf hin diese Nachricht empfangen!<br /><br />
-<span class="fontBold">Team:</span> [squad]<br /><br />
-<span class="fontUnder"><span class="fontBold">Ansprechpartner:</span></span><br />
-<span class="fontBold">Nick:</span> [nick]<br />
-<span class="fontBold">Email:</span> [email]<br />
-<span class="fontBold">ICQ-Nr.:</span> [icq]<br /><br />
-<span class="fontBold"><span class="fontUnder">Clandaten:</span></span><br />
-<span class="fontBold">Clanname:</span> [clan]<br />
-<span class="fontBold">Homepage:</span> [hp]<br />
-<span class="fontBold">Game:</span> [game]<br />
-<span class="fontBold">XonX:</span> [us] vs. [to]<br />
-<span class="fontBold">Unsere Map:</span> [map]<br />
-<span class="fontBold">Datum:</span> [date]<br /><span class="fontUnder">
-<span class="fontBold">Kommentar:</span></span><br />[text]');
 ## EDITED/ADDED FOR v 1.3.3
-define('_cw_info', 'Der Admin f&uuml;r diesen Bereich erh&auml;lt auch die FightUs-Anfragen!');
 define('_level_info', 'Beim vergeben des Levels "Admin" kann das Level nur noch &uuml;ber den Root Admin (derjenige, der das Clanportal installiert hat) ge&auml;ndert werden!<br />Ferner hat der Besitzer diesen Levels <span class="fontUnder">uneingeschr&auml;nkten</span> Zugriff auf alle Bereiche!');
 ## EDITED FOR v 1.3.1
 define('_related_links','related Links:');
-define('_cw_admin_lineup_info','Namen mit Komma trennen!');
 define('_profil_email2', 'E-mail #2');
 define('_profil_email3', 'E-mail #3');
 ## Allgemein ##
@@ -870,7 +824,6 @@ define('_ulist_acc_banned', 'Gesperrte Accounts');
 define('_login_login', 'LogIn!');
 ## Navigation: Kalender ##
 define('_kal_birthday', 'Geburtstag von ');
-define('_kal_cw', 'Clanwar gegen ');
 define('_kal_event', 'Event: ');
 ## Linkus ##
 //-> Allgemein
@@ -1059,72 +1012,6 @@ define('_dl_wait', 'Download der Datei: ');
 define('_member_squad_head', 'Teams');
 define('_member_squad_no_entrys', '<tr><td align="center"><span class="fontBold">Keine eingetragenen Member</span></td></tr>');
 define('_member_squad_weare', 'Wir sind insgesamt <span class="fontBold">[cm] Member</span> und besitzen <span class="fontBold">[cs] Team(s)</span>');
-## Clanwars ##
-define('_cw_comments_head', 'Clanwarkommentare');
-define('_cw_comments_add', 'Neuen Kommentar schreiben');
-
-define('_cw_head_details', 'Clanwar Details');
-define('_cw_head_results', 'Ergebnisse');
-define('_cw_head_lineup', 'Lineup');
-define('_cw_head_glineup', 'Gegner Lineup');
-define('_cw_head_admin', 'Admin(s)');
-define('_cw_head_squad', 'Team');
-define('_cw_bericht', 'Bericht');
-define('_cw_maps', 'Maps');
-define('_cw_serverpwd', '
-<tr>
-  <td class="contentMainTop"><span class="fontBold">Serverpasswort:</span></td>
-  <td class="contentMainFirst" colspan="2" align="center">[cw_serverpwd]</td>
-</tr>');
-define('_cw_players_head', 'Spielerstatus');
-define('_cw_status_set', 'Dein Status wurde erfolgreich gesetzt!');
-define('_cw_players_play', 'Kannst/willst/m&ouml;chtest du spielen?');
-define('_cw_player_dont_want', '<span class="fontRed">m&ouml;chte nicht spielen</span>');
-define('_cw_player_want', '<span class="fontGreen">m&ouml;chte spielen</span>');
-define('_cw_player_dont_know', 'wei&szlig; es noch nicht');
-define('_cw_admin_head', 'Neuen Clanwar hinzuf&uuml;gen');
-define('_cw_admin_head_edit', 'Clanwar editieren');
-define('_cw_admin_info', 'Solange kein Ergebnis eingetragen ist, wird der War als "Next War" angezeigt!');
-define('_cw_admin_gegnerstuff', 'Angaben zum Gegner');
-define('_cw_admin_clantag', 'Clank&uuml;rzel');
-define('_cw_admin_warstuff', 'Angaben zum Clanwar');
-define('_cw_admin_maps', 'Maps');
-define('_cw_admin_serverip', 'ServerIP');
-define('_cw_admin_empty_gegner', 'Du musst den Namen des Gegners angeben!');
-define('_cw_admin_empty_clantag', 'Du musst das Clank&uuml;rzel des Gegners angeben!');
-define('_cw_admin_deleted', 'Der Clanwar wurde erfolgreich gel&ouml;scht!');
-define('_cw_admin_added', 'Der Clanwar wurde erfolgreich hinzugef&uuml;gt!');
-define('_cw_admin_edited', 'Der Clanwar wurde erfolgreich editiert!');
-define('_cw_admin_head_squads', 'Angaben zum Team');
-define('_cw_admin_head_country', 'Land');
-define('_cw_head_statstik', 'Statistik');
-define('_cw_gespunkte', 'Gesamtpunktzahl');
-define('_cw_stats_ges_wars', '<span class="fontText">Unser Clan hat insgesamt <span class="fontBold">[ge_wars]</span> Clanwar(s) gespielt.</span>');
-define('_cw_stats_ges_wars_sq', '<span class="fontText">Dieses Team hat insgesamt <span class="fontBold">[ge_wars]</span> Clanwar(s) gespielt.</span>');
-define('_cw_stats_ges_points', 'Die Gesamtpunktzahl betr&auml;gt: <span class="CwWon">[ges_won]</span> : <span class="CwLost">[ges_lost]</span>');
-define('_cw_stats_spiele_squads', 'Wir spielen insgesamt mit <span class="fontBold">[anz_squads]</span> Team(s) verteilt auf <span class="fontBold">[anz_games]</span> Spiel(en).');
-define('_cw_stats_won_head', 'Won');
-define('_cw_stats_lost_head', 'Lost');
-define('_cw_stats_draw_head', 'Draw');
-define('_cw_head_clanwars', 'Clanwars');
-define('_cw_head_game', 'Spiel');
-define('_cw_head_datum', 'Datum');
-define('_cw_head_gegner', 'Gegner');
-define('_cw_head_liga', 'Liga');
-define('_cw_head_gametype', 'Spielart');
-define('_cw_head_xonx', 'XonX');
-define('_cw_head_result', 'Punkte');
-define('_cw_head_details_show', 'Details');
-define('_cw_head_page', 'Seite: ');
-define('_cw_head_legende', 'Legende');
-define('_cw_nothing', '<option value="lazy" class="" class="dropdownKat">--- nichts &auml;ndern ---</option>');
-define('_cw_screens', 'Screenshots');
-define('_cw_new', 'Neuer');
-define('_clanwars_no_show', 'Noch keine Clanwars vorhanden!');
-define('_cw_show_all', '
-<tr>
-  <td class="contentMainFirst" colspan="8" align="center"><a href="../clanwars/?action=showall&amp;id=[id]">Alle Wars dieses Teams anzeigen</a></td>
-</tr>');
 ## Server ##
 define('_banned_reason', 'Grund');
 define('_banned_head', 'Bannliste');
@@ -1183,30 +1070,6 @@ Jemand hat das Kontaktformular ausgef&uuml;llt!<br /><br />
 <span class="fontBold">Skype:</span> [skype]<br />
 <span class="fontBold">Steam:</span> [steam]<br /><br />
 <span class="fontUnder"><span class="fontBold">Nachricht:</span></span><br />[text]');
-define('_contact_joinus', 'JoinUs-Text');
-define('_contact_joinus_why', 'Beschreibe kurz, warum du bei uns aufgenommen werden willst.');
-define('_contact_title_joinus', 'JoinUs-Kontaktformular');
-define('_contact_text_joinus', '
-Jemand hat das Joinus-Kontaktformular ausgef&uuml;llt!<br /><br />
-<span class="fontBold">Nick:</span> [nick]<br />
-<span class="fontBold">Alter:</span> [age]<br />
-<span class="fontBold">Email:</span> [email]<br />
-<span class="fontBold">ICQ-Nr.:</span> [icq]<br />
-<span class="fontBold">Skype:</span> [skype]<br />
-<span class="fontBold">Steam:</span> [steam]<br /><br />
-<span class="fontBold">Team:</span> [squad]<br /><br />
-<span class="fontUnder"><span class="fontBold">Nachricht:</span></span><br />[text]');
-define('_contact_joinus_no_squad_aviable', 'Kein Team verf&uuml;gbar');
-define('_contact_joinus_sended', 'Dein Joinus-Anfrage wurde erfolgreich an den zust&auml;ndigen Seitenadmin weitergeleitet!');
-define('_contact_fightus', 'Kommentar');
-define('_contact_title_fightus', 'FightUs-Kontaktformular');
-define('_contact_fightus_sended', 'Dein Clanwar-Anfrage wurde erfolgreich einen zust&auml;ndigen Admin weitergeleitet!');
-define('_contact_fightus_partner', 'Ansprechpartner');
-define('_contact_fightus_clandata', 'Clandaten');
-define('_contact_fightus_clanname', 'Clanname');
-define('_fightus_maps', 'Eure Map');
-define('_empty_fightus_map', 'Du musst die Map angeben, die ihr spielen wollt!');
-define('_empty_fightus_game', 'Du musst das Spiel angeben, in dem der War stattfinden soll!');
 ## Statistiken ##
 define('_site_stats', 'Statistiken');
 define('_stats', 'Statistiken');
@@ -1230,11 +1093,6 @@ define('_stats_users_msg', 'versendete Nachrichten');
 define('_stats_users_buddys', 'Buddies');
 define('_stats_users_votes', 'teilgenommene Votes');
 define('_stats_users_aktmsg', '&nbsp;&nbsp;- davon aktuell im Umlauf');
-define('_stats_cw_played', 'gespielte Clanwars');
-define('_stats_cw_won', '&nbsp;&nbsp;- davon gewonnen');
-define('_stats_cw_draw', '&nbsp;&nbsp;- davon unentschieden');
-define('_stats_cw_lost', '&nbsp;&nbsp;- davon verloren');
-define('_stats_cw_points', 'Gesamtpunktzahl');
 define('_stats_place', '&nbsp;&nbsp;- davon Platz');
 define('_stats_place_misc', '&nbsp;&nbsp;- davon sonstige Pl&auml;tze');
 define('_stats_mysql', 'MySQL-Datenbank');
@@ -1311,7 +1169,6 @@ define('_pedit_perm_member', '<option value="0">Public</option><option value="1"
 define('_pedit_perm_allow', '<option value="1" selected="selected">Zulassen</option><option value="0">Sperren</option>');
 define('_pedit_perm_deny', '<option value="1">Zulassen</option><option value="0" selected="selected">Sperren</option>');
 define('_gallery_no_perm', '<div align="center"><br/>Du hast keine berechtigung diese Gallery zu sehen</div>');
-define('_profil_cws', 'teilgenommene CW`s');
 define('_profil_edit_pic', '<a href="../upload/?action=userpic">hochladen</a>');
 define('_profil_delete_pic', '<a href="../upload/?action=userpic&amp;do=deletepic">l&ouml;schen</a>');
 define('_profil_edit_ava', '<a href="../upload/?action=avatar">hochladen</a>');
@@ -1395,7 +1252,6 @@ define('_member_admin_gb', 'Admin: G&auml;stebuch');
 define('_member_admin_forum', 'Admin: Forum');
 define('_member_admin_intforum', 'Internes Forum sehen');
 define('_member_admin_news', 'Admin: News');
-define('_member_admin_clanwars', 'Admin: Clanwars');
 define('_error_edit_myself', 'Du kannst dich nicht selber editieren!');
 define('_error_edit_admin', 'Du darfst keine Admins editieren!');
 define('_admin_level_banned', 'Account sperren');
@@ -1432,8 +1288,6 @@ define('_new_msg_2', 'neue Nachrichten');
 define('_lobby_votes', 'Umfragen');
 define('_new_vote_1', 'neue Umfrage');
 define('_new_vote_2', 'neue Umfragen');
-define('_lobby_cw', 'Clanwars');
-define('_user_new_cw', '<tr><td style="width:22px;text-align:center"><img src="../inc/images/gameicons/[icon]" class="icon" alt="" /></td><td style="vertical-align:middle"><a href="../clanwars/?action=details&amp;id=[id]">Clanwar am <span class="fontWichtig">[datum]</span> gegen <span class="fontWichtig">[gegner]</span></a></td></tr>');
 define('_user_delete_verify', '
 <tr>
   <td class="contentHead"><span class="fontBold">User l&ouml;schen</span></td>
@@ -1704,7 +1558,6 @@ define('_config_c_archivnews', 'News-Archiv');
 define('_config_c_news', 'News');
 define('_config_c_banned', 'Bannliste');
 define('_config_c_adminnews', 'News-Admin');
-define('_config_c_clanwars', 'Clanwars');
 define('_config_c_shout', 'Shoutbox');
 define('_config_c_userlist', 'Userliste');
 define('_config_c_comments', 'Newskommentare');
@@ -1721,7 +1574,6 @@ define('_config_c_forumtopic', 'Forum: Topic');
 define('_config_c_forumsubtopic', 'Forum: Subtopic');
 define('_config_c_topdl', 'Men&uuml;: Top Downloads');
 define('_config_c_ftopics', 'Men&uuml;: Last Forumtopics');
-define('_config_c_lcws', 'Clanwars: Gegnername');
 define('_config_c_lwars', 'Men&uuml;: Last Wars');
 define('_config_c_nwars', 'Men&uuml;: Next Wars');
 define('_config_c_main', 'Allgemeine Einstellungen');
@@ -1816,7 +1668,6 @@ define('_admin_status', 'Live-Status');
 define('_error_unregistered', 'Du musst registriert sein um diese Funktion Nutzen zu k&ouml;nnen!');
 define('_seiten', 'Seite:');
 define('_admin_user_gallery', 'Admin: Galerie');
-define('_user_admin_joinus', 'JoinUs empfangen?');
 define('_user_admin_contact', 'Kontakt empfangen?');
 define('_user_admin_formulare', 'Formulare');
 define('_smileys_error_file', 'Du musst ein Smiley angeben!');
@@ -1847,7 +1698,6 @@ define('_c_l_shoutnick', 'Men&uuml;: Shoutbox: Nick');
 define('_config_c_martikel', 'Artikel');
 define('_config_c_madminartikel', 'Artikel-Admin');
 define('_reg_artikel', 'Artikelkommentare');
-define('_cw_comments', 'Clanwarkommentare');
 define('_on', 'eingeschaltet');
 define('_off', 'ausgeschaltet');
 define('_pers_info_info', 'Zeigt eine Infobox im Header mit pers&ouml;nlichen Informationen wie IP, Browser, Aufl&ouml;sung etc');
@@ -1975,7 +1825,6 @@ define('_site_messerjocke', 'Messerjocke');
 define('_site_banned', 'Bannliste');
 define('_site_gb', 'G&auml;stebuch');
 define('_site_clankasse', 'Clankasse');
-define('_site_clanwars', 'Clanwars');
 define('_site_upload', 'Upload');
 define('_site_ulist', 'Userliste');
 define('_site_msg', 'Nachrichten');
@@ -2003,15 +1852,12 @@ define('_banned', 'Bannliste');
 define('_links', 'Links');
 define('_impressum', 'Impressum');
 define('_contact', 'Kontakt');
-define('_clanwars', 'Clanwars');
 define('_artikel', 'Artikel');
 define('_dl', 'Downloads');
 define('_votes', 'Umfragen');
 define('_forum', 'Forum');
 define('_gb', 'G&auml;stebuch');
 define('_squads', 'Teams');
-define('_squads_joinus', 'Team-JoinUs');
-define('_squads_fightus', 'Team-FightUs');
 define('_server', 'Server');
 define('_editprofil', 'Profil editieren');
 define('_logout', 'Logout');
@@ -2089,10 +1935,6 @@ define('_weiter', 'weiter');
 define('_site_teamspeak', 'Teamspeak');
 define('_teamspeak', 'Teamspeak');
 define('_site_contact', 'Kontaktformular');
-define('_site_joinus', 'JoinUs - Kontaktformular');
-define('_site_fightus', 'FightUs - Kontaktformular');
-define('_joinus', 'JoinUs');
-define('_fightus', 'FightUs');
 define('_site_msg_new', 'Du hast neue Nachrichten!<br />
                          Klicke <a href="../user/?action=msg">hier</a> um ins Nachrichtenmenu zu gelangen!');
 define('_site_kalender', 'Kalender');
@@ -2121,7 +1963,6 @@ define('_news_admin_intern', 'interne News?');
 define('_news_sticky', '<span class="fontWichtig">Angeheftet:</span>');
 define('_news_get_sticky', 'News anheften?');
 define('_news_sticky_till', 'bis zum:');
-define('_cw_xonx', 'XonX');
 define('_forum_lp_head', 'Letzter Forenpost');
 define('_forum_previews', 'Vorschau');
 define('_error_unregistered_nc', '
@@ -2136,4 +1977,3 @@ define('_upload_partners_head', 'Partnerbuttons');
 define('_upload_partners_info', 'Nur jpg, gif oder png Dateien. Empfohlene Gr&ouml;e: 88px * 31px');
 define('_select_field_ranking_add', '<option value="[value]" [sel]>[what]</option>');
 define('_user_list_ck', 'In der Clankasse auflisten?');
-define('_fightus_squad', 'gew&uuml;nschtes Team');

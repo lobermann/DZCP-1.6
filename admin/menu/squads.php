@@ -69,8 +69,6 @@ switch ($do) {
                                                "self" => 1,
                                                "allow" => _allow,
                                                "deny" => _deny,
-                                               "squads_joinus" => _squads_joinus,
-                                               "squads_fightus" => _squads_fightus,
                                                "navigation" => $navigation,
                                                "nav_info" => _admin_squads_nav_info,
                                                "no_navi" => _admin_squads_no_navi,
@@ -97,8 +95,6 @@ switch ($do) {
                     `shown`        = '".(isset($_POST['show']) ? ((int)$_POST['show']) : 0)."',
                     `navi`         = '".((int)$_POST['roster'])."',
                     `team_show`    = '".((int)$_POST['team_show'])."',
-                    `team_joinus`  = '".((int)$_POST['team_joinus'])."',
-                    `team_fightus` = '".((int)$_POST['team_fightus'])."',
                     `status`       = '".(isset($_POST['status']) ? ((int)$_POST['status']) : 0)."',
                     `pos`          = '".((int)$_POST['position'])."'");
 
@@ -180,8 +176,6 @@ switch ($do) {
                     `shown`        = '".(isset($_POST['show']) ? ((int)$_POST['show']) : 0)."',
                     `navi`         = '".((int)$_POST['roster'])."',
                     `team_show`    = '".((int)$_POST['team_show'])."',
-                    `team_joinus`  = '".((int)$_POST['team_joinus'])."',
-                    `team_fightus` = '".((int)$_POST['team_fightus'])."',
                     `status`       = '".(isset($_POST['status']) ? ((int)$_POST['status']) : 0)."'
                 WHERE id = '".intval($_GET['id'])."'");
 
@@ -340,8 +334,6 @@ switch ($do) {
         $roster = $get['navi'] ? 'selected="selected"' : '';
         $status = $get['status'] ? 'selected="selected"' : '';
         $team_show = $get['team_show'] ? 'selected="selected"' : '';
-        $team_joinus = $get['team_joinus'] ? 'selected="selected"' : '';
-        $team_fightus= $get['team_fightus'] ? 'selected="selected"' : '';
 
         $files = get_files('../inc/images/gameicons/',false,true,array('gif','png','jpg')); $gameicons = '';
         foreach ($files as $file)
@@ -406,12 +398,8 @@ switch ($do) {
                                                 "show" => _show,
                                                 "dontshow" => _dont_show,
                                                 "ssquad" => re($get['name']),
-                                                "selj" => $team_joinus,
-                                                "self" => $team_fightus,
                                                 "allow" => _allow,
                                                 "deny" => _deny,
-                                                "squads_joinus" => _squads_joinus,
-                                                "squads_fightus" => _squads_fightus,
                                                 "sgame" => re($get['game']),
                                                 "positions" => $positions,
                                                 "check_show" => _button_value_show,

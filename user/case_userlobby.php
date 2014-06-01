@@ -83,34 +83,6 @@ if(defined('_UserMenu')) {
             }
         }
 
-        /** Neue Clanwars anzeigen */
-        $qrycw = db("SELECT s1.*,s2.icon FROM ".$db['cw']." AS s1
-                     LEFT JOIN ".$db['squads']." AS s2
-                     ON s1.squad_id = s2.id
-                     ORDER BY s1.datum");
-        $cws = '';
-        if(_rows($qrycw) >= 1) {
-            while($getcw = _fetch($qrycw)) {
-                if(!empty($getcw) && check_new($getcw['datum'],1)) {
-                    $check = cnt($db['cw'], " WHERE datum >".$lastvisit."");
-
-                    if($check == 1) {
-                        $cnt = 1;
-                        $eintrag = _new_eintrag_1;
-                    } else {
-                        $cnt = $check;
-                        $eintrag = _new_eintrag_2;
-                    }
-
-                    $can_erase = true;
-                    $cws .= show(_user_new_cw, array("datum" => date("d.m. H:i", $getcw['datum'])._uhr,
-                                                     "id" => $getcw['id'],
-                                                     "icon" => $getcw['icon'],
-                                                     "gegner" => re($getcw['clantag'])));
-                }
-            }
-        }
-
         /** Neue Registrierte User anzeigen */
         $getu = db("SELECT id,regdatum FROM ".$db['users']." ORDER BY id DESC",false,true); $user = '';
         if(!empty($getu) && check_new($getu['regdatum'],1)) {
@@ -238,30 +210,6 @@ if(defined('_UserMenu')) {
                                                           "id" => $getnewsc['news'],
                                                           "news" => re($getcheckn['titel']),
                                                           "eintrag" => $eintrag));
-                }
-            }
-        }
-
-        /** Neue Clanwars comments anzeigen */
-        $qrycheckcw = db("SELECT id FROM ".$db['cw']); $cwcom = '';
-        if(_rows($qrycheckcw) >= 1) {
-            while($getcheckcw = _fetch($qrycheckcw)) {
-                $getcwc = db("SELECT id,cw,datum FROM ".$db['cw_comments']." WHERE cw = '".$getcheckcw['id']."' ORDER BY datum DESC",false,true);
-                if(!empty($getcwc) && check_new($getcwc['datum'],1))
-                {
-                    $check = cnt($db['cw_comments'], " WHERE datum > ".$lastvisit." AND cw = '".$getcwc['cw']."'");
-                    if($check == 1) {
-                      $cnt = 1;
-                      $eintrag = _lobby_new_cwc_1;
-                    } else {
-                      $cnt = $check;
-                      $eintrag = _lobby_new_cwc_2;
-                    }
-
-                    $can_erase = true;
-                    $cwcom .= show(_user_new_clanwar, array("cnt" => $cnt,
-                                                            "id" => $getcwc['cw'],
-                                                            "eintrag" => $eintrag));
                 }
             }
         }
@@ -488,11 +436,9 @@ if(defined('_UserMenu')) {
                                                "forum" => $forumposts,
                                                "nvotes" => _lobby_votes,
                                                "ncwcom" => _cw_comments_head,
-                                               "cwcom" => $cwcom,
                                                "ngal" => _lobby_gallery,
                                                "gal" => $gal,
                                                "votes" => $newv,
-                                               "cws" => $cws,
                                                "ncws" => _lobby_cw,
                                                "nnewsc" => _lobby_newsc,
                                                "newsc" => $newsc,

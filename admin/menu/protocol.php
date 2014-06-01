@@ -57,8 +57,6 @@ if(_adminMenu != 'true') exit;
               $action = 'voted <b>poll</b> with <b>ID '.$wid.'</b>';
             elseif($a == 'mgbid')
               $action = autor($wid).' got a userbook entry';
-            elseif($a == 'cwid')
-              $action = 'wrote <b>comment</b> in <b>clanwar</b> with <b>ID</b> '.$wid;
             elseif($a == 'createuser') {
               $ids = explode("_", $wid);
               $action = '<b style="color:red">ADMIN</b> '.autor($ids[0]).' <b>added</b> user '.autor($ids[1]);

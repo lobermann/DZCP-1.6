@@ -17,7 +17,6 @@ switch ($do) {
                                              `m_usergb`           = '".((int)$_POST['m_usergb'])."',
                                              `m_artikel`          = '".((int)$_POST['m_artikel'])."',
                                              `m_adminartikel`     = '".((int)$_POST['m_adminartikel'])."',
-                                             `m_clanwars`         = '".((int)$_POST['m_clanwars'])."',
                                              `allowhover`         = '".((int)$_POST['ahover'])."',
                                              `securelogin`        = '".((int)$_POST['securelogin'])."',
                                              `m_clankasse`        = '".((int)$_POST['m_clankasse'])."',
@@ -36,7 +35,6 @@ switch ($do) {
                                              `m_archivnews`       = '".((int)$_POST['m_archivnews'])."',
                                              `maxwidth`           = '".((int)$_POST['maxwidth'])."',
                                              `f_forum`            = '".((int)$_POST['f_forum'])."',
-                                             `f_cwcom`            = '".((int)$_POST['f_cwcom'])."',
                                              `f_gb`               = '".((int)$_POST['f_gb'])."',
                                              `f_artikelcom`       = '".((int)$_POST['f_artikelcom'])."',
                                              `f_membergb`         = '".((int)$_POST['f_membergb'])."',
@@ -47,13 +45,11 @@ switch ($do) {
                                              `l_newsarchiv`       = '".((int)$_POST['l_newsarchiv'])."',
                                              `l_forumtopic`       = '".((int)$_POST['l_forumtopic'])."',
                                              `l_forumsubtopic`    = '".((int)$_POST['l_forumsubtopic'])."',
-                                             `l_clanwars`         = '".((int)$_POST['l_clanwars'])."',
                                              `m_lnews`            = '".((int)$_POST['m_lnews'])."',
                                              `m_lartikel`         = '".((int)$_POST['m_lartikel'])."',
                                              `m_events`           = '".((int)$_POST['m_events'])."',
                                              `m_topdl`            = '".((int)$_POST['m_topdl'])."',
                                              `m_ftopics`          = '".((int)$_POST['m_ftopics'])."',
-                                             `m_cwcomments`       = '".((int)$_POST['m_cwcomments'])."',
                                              `m_lwars`            = '".((int)$_POST['m_lwars'])."',
                                              `m_lreg`             = '".((int)$_POST['m_lreg'])."',
                                              `m_nwars`            = '".((int)$_POST['m_nwars'])."',
@@ -82,7 +78,6 @@ switch ($do) {
                                                `reg_forum`          = '".((int)$_POST['reg_forum'])."',
                                                `reg_artikel`        = '".((int)$_POST['reg_artikel'])."',
                                                `reg_shout`          = '".((int)$_POST['reg_shout'])."',
-                                               `reg_cwcomments`     = '".((int)$_POST['reg_cwcomments'])."',
                                                `counter_start`      = '".((int)$_POST['counter_start'])."',
                                                `reg_newscomments`   = '".((int)$_POST['reg_nc'])."',
                                                `reg_dl`             = '".((int)$_POST['reg_dl'])."',
@@ -135,13 +130,11 @@ switch ($do) {
         $selr_nc = $gets['reg_newscomments'] ? 'selected="selected"' : '';
         $selr_dl = $gets['reg_dl'] ? 'selected="selected"' : '';
         $selr_artikel = $gets['reg_artikel'] ? 'selected="selected"' : '';
-        $selr_cwc = $gets['reg_cwcomments'] ? 'selected="selected"' : '';
         $selr_shout = $gets['reg_shout'] ? 'selected="selected"' : '';
         $selwm = $gets['wmodus'] ? 'selected="selected"' : '';
         $selr_pi = !$gets['persinfo'] ? 'selected="selected"' : '';
         $sel_sl = $get['securelogin'] ? 'selected="selected"' : '';
         $selh_all = $get['allowhover'] == 1 ? 'selected="selected"' : '';
-        $selh_cw = $get['allowhover'] == 2 ? 'selected="selected"' : '';
         $sel_dp = $gets['double_post'] ? 'selected="selected"' : '';
         $sel_fv = $gets['forum_vote'] ? 'selected="selected"' : '';
         $sel_gba =  $gets['gb_activ'] ? 'selected="selected"' : '';
@@ -202,7 +195,6 @@ switch ($do) {
                                                  "c_m_fposts" => _config_c_fposts,
                                                  "c_m_news" => _config_c_news,
                                                  "tmpdir" => $tmpldir,
-                                                 "c_m_clanwars" => _config_c_clanwars,
                                                  "c_m_lnews" => _config_c_lnews,
                                                  "c_m_lartikel" => _config_c_lartikel,
                                                  "c_m_topdl" => _config_c_topdl,
@@ -246,9 +238,6 @@ switch ($do) {
                                                  "badword_info" => _admin_config_badword_info,
                                                  "badwords" => re($gets['badwords']),
                                                  "l_shoutnick" => $get['l_shoutnick'],
-                                                 "selr_cwc" => $selr_cwc,
-                                                 "reg_cw" => _cw_comments,
-                                                 "f_cwcom" => $get['f_cwcom'],
                                                  "selyes" => $selyes,
                                                  "selno" => $selno,
                                                  "regcode" => $gets['regcode'],
@@ -269,12 +258,10 @@ switch ($do) {
                                                  "m_shouta" => $get['maxshoutarchiv'],
                                                  "zeichen" => $get['shout_max_zeichen'],
                                                  "m_comments" => $get['m_comments'],
-                                                 "m_cwcomments" => $get['m_cwcomments'],
                                                  "m_archivnews" => $get['m_archivnews'],
                                                  "m_gb" => $get['m_gb'],
                                                  "m_fthreads" => $get['m_fthreads'],
                                                  "m_fposts" => $get['m_fposts'],
-                                                 "m_clanwars" => $get['m_clanwars'],
                                                  "m_news" => $get['m_news'],
                                                  "m_gallerypics" => $get['m_gallerypics'],
                                                  "m_upicsize" => $get['upicsize'],
@@ -319,8 +306,6 @@ switch ($do) {
                                                  "selwm" => $selwm,
                                                  "c_l_lwars" => _config_c_lwars,
                                                  "c_l_nwars" => _config_c_nwars,
-                                                 "c_l_clanwars" => _config_c_lcws,
-                                                 "l_clanwars" => $get['l_clanwars'],
                                                  "l_newsadmin" => $get['l_newsadmin'],
                                                  "l_shouttext" => $get['l_shouttext'],
                                                  "l_newsarchiv" => $get['l_newsarchiv'],
@@ -346,7 +331,6 @@ switch ($do) {
                                                  "seclogin" => _config_seclogin,
                                                  "standard" => _config_hover_standard,
                                                  "all_on" => _config_hover_all,
-                                                 "cw_only" => _config_hover_cw,
                                                  "fotum_vote" => _config_fotum_vote,
                                                  "fotum_vote_info" => _config_fotum_vote_info,
                                                  "double_post" => _config_double_post,
@@ -357,7 +341,6 @@ switch ($do) {
                                                  "sel_dp" => $sel_dp,
                                                  "sel_gba" => $sel_gba,
                                                  "selh_all" => $selh_all,
-                                                 "selh_cw" => $selh_cw,
                                                  "selr_nc" => $selr_nc,
                                                  "selr_forum" => $selr_forum,
                                                  "selr_dl" => $selr_dl,

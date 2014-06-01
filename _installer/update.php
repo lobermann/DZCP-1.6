@@ -100,7 +100,6 @@ case 'prepare';
         set_ftp_chmod('inc/images',$pfad,$host,$user,$pwd);
         set_ftp_chmod('inc/images/tsicons/',$pfad,$host,$user,$pwd);
         set_ftp_chmod('inc/images/tsicons/server/',$pfad,$host,$user,$pwd);
-        set_ftp_chmod('inc/images/clanwars',$pfad,$host,$user,$pwd);
         set_ftp_chmod('inc/images/gameicons',$pfad,$host,$user,$pwd);
         set_ftp_chmod('inc/images/maps',$pfad,$host,$user,$pwd);
         set_ftp_chmod('inc/images/newskat',$pfad,$host,$user,$pwd);
@@ -151,7 +150,6 @@ case 'prepare';
   $c .= check_file_dir('../inc/images',1);
   $c .= check_file_dir('../inc/images/tsicons',1);
   $c .= check_file_dir('../inc/images/tsicons/server',1);
-  $c .= check_file_dir('../inc/images/clanwars',1);
   $c .= check_file_dir('../inc/images/gameicons',1);
   $c .= check_file_dir('../inc/images/maps',1);
   $c .= check_file_dir('../inc/images/newskat',1);
@@ -267,25 +265,6 @@ case 'database';
   {
     if($mysql)
     {
-//Clanwar Screenshots verschieben
-  $files = get_files('../inc/images/clanwars');
-  for($i=0; $i<count($files); $i++)
-  {
-    if(is_dir('../inc/images/clanwars/'.$files[$i]))
-    {
-      $sc = get_files('../inc/images/clanwars/'.$files[$i]);
-      for($e=0; $e<count($sc); $e++)
-      {
-        @copy(
-          '../inc/images/clanwars/'.$files[$i].'/'.$sc[$e],
-          '../inc/images/clanwars/'.$files[$i].'_'.$sc[$e]
-        );
-        @unlink('../inc/images/clanwars/'.$files[$i].'/'.$sc[$e]);
-      }
-      @unlink('../inc/images/clanwars/'.$files[$i]);
-      @rmdir('../inc/images/clanwars/'.$files[$i]);
-    }
-  }
 //Bilder aus der Usergalerie verschieben
   $files = get_files('../inc/images/uploads/usergallery/');
   for($i=0; $i<count($files); $i++)

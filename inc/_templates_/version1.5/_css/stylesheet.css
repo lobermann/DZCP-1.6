@@ -426,11 +426,6 @@ td.navTmpswitchLeft {
   width: 13px;
 }
 
-td.navNextCwDate {
-  color: #FFF;
-  vertical-align: middle;
-}
-
 td.navLastNewsLeft,td.navFtopicsLeft,td.navLastCwLeft,td.navNextCwLeft,td.navLastArtikelLeft,td.navKalLeft,td.navVoteLeft,td.navShoutLeft,td.navServerStatsLeft,td.navEventsLeft,td.navTeamLeft,td.topMatchLeft {
   width: 2px;
 }
@@ -619,8 +614,6 @@ Attributes of the squads
 -----------------------------------------------
 squads/squads_show.html
 squads/squads_member.html
-clanwars/stats.html
-clanwars/squads_show.html
 server/server_show.html
 ---------------------------------------------*/
 table.highlightSquads,table.highlightStats,table.highlightServer {

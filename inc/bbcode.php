@@ -82,7 +82,6 @@ $today = date("j.n.Y");
 $picformat = array("jpg", "gif", "png");
 $userip = visitorIp();
 $maxpicwidth = 90;
-$maxadmincw = 10;
 $maxfilesize = @ini_get('upload_max_filesize');
 
 //-> Global
@@ -1318,55 +1317,6 @@ function check_buddy($buddy) {
     return !db("SELECT buddy FROM ".$db['buddys']." WHERE user = '".intval($userid)."' AND buddy = '".intval($buddy)."'",true) ? true : false;
 }
 
-//-> Funktion um bei Clanwars Endergebnisse auszuwerten
-function cw_result($punkte, $gpunkte) {
-    if($punkte > $gpunkte)
-        return '<span class="CwWon">'.$punkte.':'.$gpunkte.'</span> <img src="../inc/images/won.gif" alt="" class="icon" />';
-    else if($punkte < $gpunkte)
-        return '<span class="CwLost">'.$punkte.':'.$gpunkte.'</span> <img src="../inc/images/lost.gif" alt="" class="icon" />';
-    else
-        return '<span class="CwDraw">'.$punkte.':'.$gpunkte.'</span> <img src="../inc/images/draw.gif" alt="" class="icon" />';
-}
-
-function cw_result_pic($punkte, $gpunkte) {
-    if($punkte > $gpunkte)
-        return '<img src="../inc/images/won.gif" alt="" class="icon" />';
-    else if($punkte < $gpunkte)
-        return '<img src="../inc/images/lost.gif" alt="" class="icon" />';
-    else
-        return '<img src="../inc/images/draw.gif" alt="" class="icon" />';
-}
-
-//-> Funktion um bei Clanwars Endergebnisse auszuwerten ohne bild
-function cw_result_nopic($punkte, $gpunkte) {
-    if($punkte > $gpunkte)
-        return '<span class="CwWon">'.$punkte.':'.$gpunkte.'</span>';
-    else if($punkte < $gpunkte)
-        return '<span class="CwLost">'.$punkte.':'.$gpunkte.'</span>';
-    else
-        return '<span class="CwDraw">'.$punkte.':'.$gpunkte.'</span>';
-}
-
-//-> Funktion um bei Clanwars Endergebnisse auszuwerten ohne bild und ohne farbe
-function cw_result_nopic_nocolor($punkte, $gpunkte) {
-    if($punkte > $gpunkte)
-        return $punkte.':'.$gpunkte;
-    else if($punkte < $gpunkte)
-        return $punkte.':'.$gpunkte;
-    else
-        return $punkte.':'.$gpunkte;
-}
-
-//-> Funktion um bei Clanwars Details Endergebnisse auszuwerten ohne bild
-function cw_result_details($punkte, $gpunkte) {
-    if($punkte > $gpunkte)
-        return '<td class="contentMainFirst" align="center"><span class="CwWon">'.$punkte.'</span></td><td class="contentMainFirst" align="center"><span class="CwLost">'.$gpunkte.'</span></td>';
-    else if($punkte < $gpunkte)
-        return '<td class="contentMainFirst" align="center"><span class="CwLost">'.$punkte.'</span></td><td class="contentMainFirst" align="center"><span class="CwWon">'.$gpunkte.'</span></td>';
-    else
-        return '<td class="contentMainFirst" align="center"><span class="CwDraw">'.$punkte.'</span></td><td class="contentMainFirst" align="center"><span class="CwDraw">'.$gpunkte.'</span></td>';
-}
-
 //-> Flaggen ausgeben
 function flag($code) {
     global $picformat;
@@ -1492,10 +1442,6 @@ function check_email($email) {
 //-> Bilder verkleinern
 function img_size($img) {
     return "<a href=\"../".$img."\" rel=\"lightbox[l_".intval($img)."]\"><img src=\"../thumbgen.php?img=".$img."\" alt=\"\" /></a>";
-}
-
-function img_cw($folder="", $img="") {
-    return "<a href=\"../".$folder.$img."\" rel=\"lightbox[cw_".intval($folder)."]\"><img src=\"../thumbgen.php?img=".$folder.$img."\" alt=\"\" /></a>";
 }
 
 function gallery_size($img="") {
@@ -2089,7 +2035,7 @@ function admin_perms($userid) {
         return false;
 
    // no need for these admin areas
-    $e = array('gb', 'shoutbox', 'editusers', 'votes', 'contact', 'joinus', 'intnews', 'forum', 'gs_showpw');
+    $e = array('gb', 'shoutbox', 'editusers', 'votes', 'contact', 'intnews', 'forum', 'gs_showpw');
 
    // check user permission
     $c = db("SELECT * FROM ".$db['permissions']." WHERE user = '".intval($userid)."'",false,true);

@@ -71,7 +71,7 @@ default:
     $data = '';
     for($iw = 1; $iw <= 7; $iw++)
     {
-      unset($bdays, $cws, $infoBday, $infoCW, $infoEvent);
+      unset($bdays, $infoBday, $infoEvent);
       $datum = mktime(0,0,0,$monat,$i,$jahr);
       $wday = getdate($datum);
       $wday = $wday['wday'];
@@ -96,19 +96,6 @@ default:
             $bdays = '<a href="../user/?action=userlist&amp;show=bday&amp;time='.$datum.'"'.$info.'><img src="../inc/images/bday.gif" alt="" /></a>';
         }
 
-          $qry = db("SELECT datum,gegner FROM ".$db['cw']."
-                     WHERE DATE_FORMAT(FROM_UNIXTIME(datum), '%d.%m.%Y') = '".cal($i).".".$monat.".".$jahr."'");
-        if(_rows($qry))
-        {
-          $infoCW = '';
-          while($get = _fetch($qry)) $infoCW .= '&lt;img src=../inc/images/cw.gif class=icon alt= /&gt;'.'&nbsp;'.jsconvert(_kal_cw.re($get['gegner'])).'<br />';
-
-          $info = ' onmouseover="DZCP.showInfo(\''.$infoCW.'\')" onmouseout="DZCP.hideInfo()"';
-          $cws = '<a href="../clanwars/?action=kalender&amp;time='.$datum.'"'.$info.'><img src="../inc/images/cw.gif" alt="" /></a>';
-        } else {
-          $cws = "";
-        }
-
         $qry = db("SELECT datum,title FROM ".$db['events']."
                    WHERE DATE_FORMAT(FROM_UNIXTIME(datum), '%d.%m.%Y') = '".cal($i).".".$monat.".".$jahr."'");
         if(_rows($qry))
@@ -122,7 +109,7 @@ default:
           $event = "";
         }
 
-        $events = $bdays." ".$cws." ".$event;
+        $events = $bdays." ".$event;
 
         if(isset($_GET['hl']) && $_GET['hl'] == $i) $day = '<span class="fontMarked">'.cal($i).'</span>';
         else $day = cal($i);

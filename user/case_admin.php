@@ -281,7 +281,6 @@ if(defined('_UserMenu')) {
                                                    "forums" => _forum,
                                                    "access" => _access,
                                                    "news" => _member_admin_news,
-                                                   "clanwars" => _member_admin_clanwars,
                                                    "posi" => _profil_position,
                                                    "level" => _admin_user_level,
                                                    "ck" => _admin_user_clankasse,
